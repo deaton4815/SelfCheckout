@@ -4,13 +4,10 @@
 
 using namespace std;
 
-void Item::setProductID(string id) { m_productID = id; }
-
-void Item::setProductDescription(string description) {
-	m_productDescription = description;
-}
-
-void Item::setUnitPrice(float price) { m_unitPrice = price; }
+Item::Item(string id, string description, float price)
+	: m_productID{ id }
+	, m_productDescription{ description }
+	, m_unitPrice{ price } {}
 
 string Item::getProductID() { return m_productID; }
 
