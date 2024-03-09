@@ -129,12 +129,11 @@
   <ItemGroup>
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
-    <ClInclude Include="Meat01.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
-    <ClCompile Include="Meat01.cpp" />
+    <ClCompile Include="InventoryTest.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

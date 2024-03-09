@@ -6,22 +6,22 @@ using namespace std;
 
 class Item
 {
-private:
-
-	string m_productID{ "" };
-	string m_productDescription{ "" };
-	float m_unitPrice{ 0 };
-
-protected:
-
-	void setProductID(string);
-	void setProductDescription(string);
-	void setUnitPrice(float);
 
 public:
 
-	string getProductID();
-	string getProductDescription();
-	float getUnitPrice();
+	//Item();
+	Item(const string, const string, const float);
+
+	Item(const Item&);
+
+	string getProductID() const;
+	string getProductDescription() const;
+	float getUnitPrice() const;
+
+private:
+
+	const string m_productID;
+	const string m_productDescription;
+	const float m_unitPrice;
 
 };
