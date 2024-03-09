@@ -67,3 +67,25 @@ Inventory::Inventory()
 	, m_milk01Price{ 4.00 }
 	, m_milk01(m_milk01ID, m_milk01Description, m_milk01Price)
 {}
+
+Item Inventory::getMeat01() const { return m_meat01; }
+
+Item Inventory::getMeat02() const { return m_meat02; }
+
+Item Inventory::getIceCream01() const { return m_iceCream01; }
+
+Item Inventory::getCorn01() const { return m_corn01; }
+
+Item Inventory::getCaseWater01() const { return m_caseWater01; }
+
+Item Inventory::getPotatoChips01() const { return m_potatoChips01; }
+
+Item Inventory::getPotatoChips02() const { return m_potatoChips02; }
+
+Item Inventory::getDonuts01() const { return m_donuts01; }
+
+Item Inventory::getSausage01() const { return m_sausage01; }
+
+Item Inventory::getEggs01() const { return m_eggs01; }
+
+Item Inventory::getMilk01() const { return m_milk01; }

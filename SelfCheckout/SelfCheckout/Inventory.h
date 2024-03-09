@@ -12,6 +12,18 @@ public:
 
 	Inventory();
 
+	Item getMeat01() const;
+	Item getMeat02() const;
+	Item getIceCream01() const;
+	Item getCorn01() const;
+	Item getCaseWater01() const;
+	Item getPotatoChips01() const;
+	Item getPotatoChips02() const;
+	Item getDonuts01() const;
+	Item getSausage01() const;
+	Item getEggs01() const;
+	Item getMilk01() const;
+	
 private:
 
 	const Item m_meat01;
