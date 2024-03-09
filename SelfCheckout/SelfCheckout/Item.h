@@ -9,7 +9,10 @@ class Item
 
 public:
 
+	//Item();
 	Item(const string, const string, const float);
+
+	Item(const Item&);
 
 	string getProductID() const;
 	string getProductDescription() const;
