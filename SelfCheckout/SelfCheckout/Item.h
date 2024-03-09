@@ -9,16 +9,16 @@ class Item
 
 public:
 
-	Item(string, string, float);
+	Item(const string, const string, const float);
 
-	string getProductID();
-	string getProductDescription();
-	float getUnitPrice();
+	string getProductID() const;
+	string getProductDescription() const;
+	float getUnitPrice() const;
 
 private:
 
-	string m_productID;
-	string m_productDescription;
-	float m_unitPrice;
+	const string m_productID;
+	const string m_productDescription;
+	const float m_unitPrice;
 
 };

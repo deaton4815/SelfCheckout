@@ -4,13 +4,13 @@
 
 using namespace std;
 
-Item::Item(string id, string description, float price)
+Item::Item(const string id, const string description, const float price)
 	: m_productID{ id }
 	, m_productDescription{ description }
 	, m_unitPrice{ price } {}
 
-string Item::getProductID() { return m_productID; }
+string Item::getProductID() const { return m_productID; }
 
-string Item::getProductDescription() { return m_productDescription; }
+string Item::getProductDescription() const { return m_productDescription; }
 
-float Item::getUnitPrice() { return m_unitPrice; }
+float Item::getUnitPrice() const { return m_unitPrice; }
