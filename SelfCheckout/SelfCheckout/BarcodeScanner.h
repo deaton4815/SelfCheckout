@@ -16,7 +16,7 @@ private:
 	const Inventory m_itemInventory;
 	Cart m_scannedItems;
 
-	const Item& getItem(const int) const;
+	const Item getItem(const int) const;
 
 
 };

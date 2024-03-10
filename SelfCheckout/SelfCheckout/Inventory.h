@@ -12,7 +12,7 @@ public:
 
 	Inventory();
 
-	const Item& getItem(const int) const;
+	const Item getItem(const int) const;
 
 private:
 
@@ -91,17 +91,17 @@ private:
 	const Item m_milk01;
 
 	ItemName getItemName(const int) const;
-	const Item& identifyItem(ItemName) const;
+	const Item identifyItem(ItemName) const;
 
-	const Item& getMeat01() const;
-	const Item& getMeat02() const;
-	const Item& getIceCream01() const;
-	const Item& getCorn01() const;
-	const Item& getCaseWater01() const;
-	const Item& getPotatoChips01() const;
-	const Item& getPotatoChips02() const;
-	const Item& getDonuts01() const;
-	const Item& getSausage01() const;
-	const Item& getEggs01() const;
-	const Item& getMilk01() const;
+	const Item getMeat01() const;
+	const Item getMeat02() const;
+	const Item getIceCream01() const;
+	const Item getCorn01() const;
+	const Item getCaseWater01() const;
+	const Item getPotatoChips01() const;
+	const Item getPotatoChips02() const;
+	const Item getDonuts01() const;
+	const Item getSausage01() const;
+	const Item getEggs01() const;
+	const Item getMilk01() const;
 };

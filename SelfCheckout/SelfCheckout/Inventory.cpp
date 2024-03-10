@@ -66,7 +66,7 @@ Inventory::Inventory()
 	, m_milk01(m_milk01ID, m_milk01Description, m_milk01Price)
 {}
 
-const Item& Inventory::getItem(const int itemNumber) const {
+const Item Inventory::getItem(const int itemNumber) const {
 	const ItemName name{ getItemName(itemNumber) };
 	return identifyItem(name);
 }
@@ -75,7 +75,7 @@ Inventory::ItemName Inventory::getItemName(const int itemNumber) const {
 	return static_cast<ItemName>(itemNumber);
 }
 
-const Item& Inventory::identifyItem(Inventory::ItemName name) const {
+const Item Inventory::identifyItem(Inventory::ItemName name) const {
 
 	switch (name) {
 	case ItemName::Meat01:
@@ -113,24 +113,24 @@ const Item& Inventory::identifyItem(Inventory::ItemName name) const {
 	}
 }
 
-const Item& Inventory::getMeat01() const { return m_meat01; }
+const Item Inventory::getMeat01() const { return m_meat01; }
 
-const Item& Inventory::getMeat02() const { return m_meat02; }
+const Item Inventory::getMeat02() const { return m_meat02; }
 
-const Item& Inventory::getIceCream01() const { return m_iceCream01; }
+const Item Inventory::getIceCream01() const { return m_iceCream01; }
 
-const Item& Inventory::getCorn01() const { return m_corn01; }
+const Item Inventory::getCorn01() const { return m_corn01; }
 
-const Item& Inventory::getCaseWater01() const { return m_caseWater01; }
+const Item Inventory::getCaseWater01() const { return m_caseWater01; }
 
-const Item& Inventory::getPotatoChips01() const { return m_potatoChips01; }
+const Item Inventory::getPotatoChips01() const { return m_potatoChips01; }
 
-const Item& Inventory::getPotatoChips02() const { return m_potatoChips02; }
+const Item Inventory::getPotatoChips02() const { return m_potatoChips02; }
 
-const Item& Inventory::getDonuts01() const { return m_donuts01; }
+const Item Inventory::getDonuts01() const { return m_donuts01; }
 
-const Item& Inventory::getSausage01() const { return m_sausage01; }
+const Item Inventory::getSausage01() const { return m_sausage01; }
 
-const Item& Inventory::getEggs01() const { return m_eggs01; }
+const Item Inventory::getEggs01() const { return m_eggs01; }
 
-const Item& Inventory::getMilk01() const { return m_milk01; }
+const Item Inventory::getMilk01() const { return m_milk01; }

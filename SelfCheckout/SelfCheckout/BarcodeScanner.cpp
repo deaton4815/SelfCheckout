@@ -7,6 +7,6 @@ void BarcodeScanner::scanItem(const int itemNumber) {
 
 } 
 
-const Item& BarcodeScanner::getItem(const int itemNumber) const {
+const Item BarcodeScanner::getItem(const int itemNumber) const {
 	return m_itemInventory.getItem(itemNumber);
 }
