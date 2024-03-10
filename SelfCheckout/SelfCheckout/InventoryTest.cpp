@@ -9,9 +9,14 @@ int main() {
 	BarcodeScanner scanner;
 	//Inventory testInventory{ scanner.getInventory()};
 
-	const int itemNumber{ 0 };
+	const int itemNumber1{ 0 };
+	const int itemNumber2{ 3 };
 	//scanner.getItem();
-	scanner.scanItem(itemNumber);
+	scanner.scanItem(itemNumber1);
+	scanner.scanItem(itemNumber2);
+	scanner.getScannedItemIDs();
+
+
 
 	/*
 	scanner.scanItem(1);

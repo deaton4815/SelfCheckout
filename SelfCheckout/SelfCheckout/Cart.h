@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <string>
 
 #include "Item.h"
 
@@ -11,6 +12,7 @@ class Cart
 public:
 
 	void addItem(const Item&);
+	vector<string> getItemIDs();
 
 private:
 
