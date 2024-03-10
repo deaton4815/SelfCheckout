@@ -8,7 +8,7 @@ void BarcodeScanner::scanItem(const int itemNumber) {
 
 vector<string> BarcodeScanner::getScannedItemIDs() {
 	updateScannedIDs();
-	return m_scannedItemIDs;
+ 	return m_scannedItemIDs;
 }
 vector<string> BarcodeScanner::getScannedItemDescriptions() { 
 	updateScannedDescriptions();
