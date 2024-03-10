@@ -2,8 +2,6 @@
 
 #include <string>
 
-#include "Item.h"
-
 using namespace std;
 
 Inventory::Inventory()
@@ -68,24 +66,71 @@ Inventory::Inventory()
 	, m_milk01(m_milk01ID, m_milk01Description, m_milk01Price)
 {}
 
-Item Inventory::getMeat01() const { return m_meat01; }
+const Item Inventory::getItem(const int itemNumber) const {
+	const ItemName name{ getItemName(itemNumber) };
+	return identifyItem(name);
+}
 
-Item Inventory::getMeat02() const { return m_meat02; }
+Inventory::ItemName Inventory::getItemName(const int itemNumber) const {
+	return static_cast<ItemName>(itemNumber);
+}
 
-Item Inventory::getIceCream01() const { return m_iceCream01; }
+const Item Inventory::identifyItem(Inventory::ItemName name) const {
 
-Item Inventory::getCorn01() const { return m_corn01; }
+	switch (name) {
+	case ItemName::Meat01:
+		return getMeat01();
 
-Item Inventory::getCaseWater01() const { return m_caseWater01; }
+	case ItemName::Meat02:
+		return getMeat01();
 
-Item Inventory::getPotatoChips01() const { return m_potatoChips01; }
+	case ItemName::IceCream01:
+		return getIceCream01();
 
-Item Inventory::getPotatoChips02() const { return m_potatoChips02; }
+	case ItemName::Corn01:
+		return getCorn01();
 
-Item Inventory::getDonuts01() const { return m_donuts01; }
+	case ItemName::CaseWater01:
+		return getCaseWater01();
 
-Item Inventory::getSausage01() const { return m_sausage01; }
+	case ItemName::PotatoChips01:
+		return getPotatoChips01();
 
-Item Inventory::getEggs01() const { return m_eggs01; }
+	case ItemName::PotatoChips02:
+		return getPotatoChips02();
 
-Item Inventory::getMilk01() const { return m_milk01; }
+	case ItemName::Donuts01:
+		return getDonuts01();
+
+	case ItemName::Sausage01:
+		return getSausage01();
+
+	case ItemName::Eggs01:
+		return getEggs01();
+
+	case ItemName::Milk01:
+		return getMilk01();
+	}
+}
+
+const Item Inventory::getMeat01() const { return m_meat01; }
+
+const Item Inventory::getMeat02() const { return m_meat02; }
+
+const Item Inventory::getIceCream01() const { return m_iceCream01; }
+
+const Item Inventory::getCorn01() const { return m_corn01; }
+
+const Item Inventory::getCaseWater01() const { return m_caseWater01; }
+
+const Item Inventory::getPotatoChips01() const { return m_potatoChips01; }
+
+const Item Inventory::getPotatoChips02() const { return m_potatoChips02; }
+
+const Item Inventory::getDonuts01() const { return m_donuts01; }
+
+const Item Inventory::getSausage01() const { return m_sausage01; }
+
+const Item Inventory::getEggs01() const { return m_eggs01; }
+
+const Item Inventory::getMilk01() const { return m_milk01; }

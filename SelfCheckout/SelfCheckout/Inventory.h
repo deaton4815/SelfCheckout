@@ -12,19 +12,23 @@ public:
 
 	Inventory();
 
-	Item getMeat01() const;
-	Item getMeat02() const;
-	Item getIceCream01() const;
-	Item getCorn01() const;
-	Item getCaseWater01() const;
-	Item getPotatoChips01() const;
-	Item getPotatoChips02() const;
-	Item getDonuts01() const;
-	Item getSausage01() const;
-	Item getEggs01() const;
-	Item getMilk01() const;
+	const Item getItem(const int) const;
 
 private:
+
+	enum class ItemName {
+		Meat01 = 0,
+		Meat02,
+		IceCream01,
+		Corn01,
+		CaseWater01,
+		PotatoChips01,
+		PotatoChips02,
+		Donuts01,
+		Sausage01,
+		Eggs01,
+		Milk01
+	};
 
 	const string m_meat01ID;
 	const string m_meat01Description;
@@ -85,5 +89,19 @@ private:
 	const string m_milk01Description;
 	const float m_milk01Price;
 	const Item m_milk01;
-};
 
+	ItemName getItemName(const int) const;
+	const Item identifyItem(ItemName) const;
+
+	const Item getMeat01() const;
+	const Item getMeat02() const;
+	const Item getIceCream01() const;
+	const Item getCorn01() const;
+	const Item getCaseWater01() const;
+	const Item getPotatoChips01() const;
+	const Item getPotatoChips02() const;
+	const Item getDonuts01() const;
+	const Item getSausage01() const;
+	const Item getEggs01() const;
+	const Item getMilk01() const;
+};

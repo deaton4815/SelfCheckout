@@ -1,14 +1,35 @@
+#include "BarcodeScanner.h"
 #include "Inventory.h"
-#include "Item.h"
 
 #include <iostream>
 #include<string>
 
 int main() {
 
-	Inventory testInventory;
-	Item testItem{ testInventory.getMeat01() };
+	BarcodeScanner scanner;
+	//Inventory testInventory{ scanner.getInventory()};
 
-	cout << testItem.getProductDescription();
+	const int itemNumber1{ 0 };
+	const int itemNumber2{ 3 };
+	//scanner.getItem();
+	scanner.scanItem(itemNumber1);
+	scanner.scanItem(itemNumber2);
+	scanner.getScannedItemIDs();
+
+
+
+	/*
+	scanner.scanItem(1);
+	scanner.scanItem(2);
+	scanner.scanItem(3);
+	scanner.scanItem(4);
+	scanner.scanItem(5);
+	scanner.scanItem(6);
+	scanner.scanItem(7);
+	scanner.scanItem(8);
+	scanner.scanItem(9);
+	scanner.scanItem(10);
+	scanner.scanItem(11);
+	*/
 
 }

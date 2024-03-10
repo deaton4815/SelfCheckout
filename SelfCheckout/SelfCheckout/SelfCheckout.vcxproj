@@ -127,10 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BarcodeScanner.h" />
+    <ClInclude Include="Cart.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BarcodeScanner.cpp" />
+    <ClCompile Include="Cart.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="InventoryTest.cpp" />
