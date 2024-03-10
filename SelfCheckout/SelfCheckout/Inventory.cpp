@@ -2,8 +2,6 @@
 
 #include <string>
 
-#include "Item.h"
-
 using namespace std;
 
 Inventory::Inventory()
@@ -68,7 +66,7 @@ Inventory::Inventory()
 	, m_milk01(m_milk01ID, m_milk01Description, m_milk01Price)
 {}
 
-Item Inventory::getItem(const int itemNumber) const {
+const Item& Inventory::getItem(const int itemNumber) const {
 	const ItemName name{ getItemName(itemNumber) };
 	return identifyItem(name);
 }

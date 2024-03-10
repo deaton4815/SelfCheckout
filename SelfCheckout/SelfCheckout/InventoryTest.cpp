@@ -1,14 +1,22 @@
-#include "Inventory.h"
-#include "Item.h"
+#include "BarcodeScanner.h"
 
 #include <iostream>
 #include<string>
 
 int main() {
 
-	Inventory testInventory;
-	Item testItem{ testInventory.getMeat01() };
+	BarcodeScanner scanner;
 
-	cout << testItem.getProductDescription();
-
+	scanner.scanItem(0);
+	scanner.scanItem(1);
+	scanner.scanItem(2);
+	scanner.scanItem(3);
+	scanner.scanItem(4);
+	scanner.scanItem(5);
+	scanner.scanItem(6);
+	scanner.scanItem(7);
+	scanner.scanItem(8);
+	scanner.scanItem(9);
+	scanner.scanItem(10);
+	scanner.scanItem(11);
 }

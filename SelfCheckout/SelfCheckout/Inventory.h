@@ -12,7 +12,7 @@ public:
 
 	Inventory();
 
-	Item getItem(const int) const;
+	const Item& getItem(const int) const;
 
 private:
 
