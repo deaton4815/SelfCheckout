@@ -1,4 +1,5 @@
 #include "BarcodeScanner.h"
+#include "Inventory.h"
 
 #include <iostream>
 #include<string>
@@ -6,8 +7,13 @@
 int main() {
 
 	BarcodeScanner scanner;
+	//Inventory testInventory{ scanner.getInventory()};
 
-	scanner.scanItem(0);
+	const int itemNumber{ 0 };
+	//scanner.getItem();
+	scanner.scanItem(itemNumber);
+
+	/*
 	scanner.scanItem(1);
 	scanner.scanItem(2);
 	scanner.scanItem(3);
@@ -19,4 +25,6 @@ int main() {
 	scanner.scanItem(9);
 	scanner.scanItem(10);
 	scanner.scanItem(11);
+	*/
+
 }

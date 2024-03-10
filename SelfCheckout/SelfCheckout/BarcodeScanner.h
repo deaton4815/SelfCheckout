@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Item.h"
 #include "Inventory.h"
 #include "Cart.h"
 
@@ -14,5 +15,8 @@ private:
 
 	const Inventory m_itemInventory;
 	Cart m_scannedItems;
+
+	const Item& getItem(const int) const;
+
 
 };
