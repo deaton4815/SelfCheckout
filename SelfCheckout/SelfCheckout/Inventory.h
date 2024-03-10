@@ -91,17 +91,17 @@ private:
 	const Item m_milk01;
 
 	ItemName getItemName(const int) const;
-	Item identifyItem(const ItemName) const;
+	const Item& identifyItem(ItemName) const;
 
-	Item getMeat01() const;
-	Item getMeat02() const;
-	Item getIceCream01() const;
-	Item getCorn01() const;
-	Item getCaseWater01() const;
-	Item getPotatoChips01() const;
-	Item getPotatoChips02() const;
-	Item getDonuts01() const;
-	Item getSausage01() const;
-	Item getEggs01() const;
-	Item getMilk01() const;
+	const Item& getMeat01() const;
+	const Item& getMeat02() const;
+	const Item& getIceCream01() const;
+	const Item& getCorn01() const;
+	const Item& getCaseWater01() const;
+	const Item& getPotatoChips01() const;
+	const Item& getPotatoChips02() const;
+	const Item& getDonuts01() const;
+	const Item& getSausage01() const;
+	const Item& getEggs01() const;
+	const Item& getMilk01() const;
 };

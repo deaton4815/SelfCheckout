@@ -77,7 +77,7 @@ Inventory::ItemName Inventory::getItemName(const int itemNumber) const {
 	return static_cast<ItemName>(itemNumber);
 }
 
-Item Inventory::identifyItem(const Inventory::ItemName name) const {
+const Item& Inventory::identifyItem(Inventory::ItemName name) const {
 
 	switch (name) {
 	case ItemName::Meat01:
@@ -115,24 +115,24 @@ Item Inventory::identifyItem(const Inventory::ItemName name) const {
 	}
 }
 
-Item Inventory::getMeat01() const { return m_meat01; }
+const Item& Inventory::getMeat01() const { return m_meat01; }
 
-Item Inventory::getMeat02() const { return m_meat02; }
+const Item& Inventory::getMeat02() const { return m_meat02; }
 
-Item Inventory::getIceCream01() const { return m_iceCream01; }
+const Item& Inventory::getIceCream01() const { return m_iceCream01; }
 
-Item Inventory::getCorn01() const { return m_corn01; }
+const Item& Inventory::getCorn01() const { return m_corn01; }
 
-Item Inventory::getCaseWater01() const { return m_caseWater01; }
+const Item& Inventory::getCaseWater01() const { return m_caseWater01; }
 
-Item Inventory::getPotatoChips01() const { return m_potatoChips01; }
+const Item& Inventory::getPotatoChips01() const { return m_potatoChips01; }
 
-Item Inventory::getPotatoChips02() const { return m_potatoChips02; }
+const Item& Inventory::getPotatoChips02() const { return m_potatoChips02; }
 
-Item Inventory::getDonuts01() const { return m_donuts01; }
+const Item& Inventory::getDonuts01() const { return m_donuts01; }
 
-Item Inventory::getSausage01() const { return m_sausage01; }
+const Item& Inventory::getSausage01() const { return m_sausage01; }
 
-Item Inventory::getEggs01() const { return m_eggs01; }
+const Item& Inventory::getEggs01() const { return m_eggs01; }
 
-Item Inventory::getMilk01() const { return m_milk01; }
+const Item& Inventory::getMilk01() const { return m_milk01; }

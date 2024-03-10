@@ -10,7 +10,7 @@ class Cart
 {
 public:
 
-	void addItem(Item);
+	void addItem(const Item&);
 
 private:
 
