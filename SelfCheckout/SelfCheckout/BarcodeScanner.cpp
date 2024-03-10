@@ -20,31 +20,11 @@ vector<float> BarcodeScanner::getScannedItemPrices() {
 }
 
 void BarcodeScanner::updateScannedIDs() {
-	setUpdatedScannedIDs(getUpdatedScannedIDs());
+	m_scannedItemIDs = m_scannedItems.getItemIDs();
 }
 void BarcodeScanner::updateScannedDescriptions() {
-	setUpdatedScannedDescriptions(getUpdatedScannedDescriptions());
+	m_scannedItemDescriptions = m_scannedItems.getItemDescriptions();
 }
 void BarcodeScanner::updateScannedPrices() {
-	setUpdatedScannedPrices(getUpdatedScannedPrices());
-}
-
-vector<string> BarcodeScanner::getUpdatedScannedIDs() {
-	return m_scannedItems.getItemIDs();
-}
-vector<string> BarcodeScanner::getUpdatedScannedDescriptions() {
-	return m_scannedItems.getItemDescriptions();
-}
-vector<float> BarcodeScanner::getUpdatedScannedPrices() {
-	return m_scannedItems.getItemPrices();
-}
-
-void BarcodeScanner::setUpdatedScannedIDs(const vector<string>& ids) {
-	m_scannedItemIDs = ids;
-}
-void BarcodeScanner::setUpdatedScannedDescriptions(const vector<string>& descriptions) {
-	m_scannedItemDescriptions = descriptions;
-}
-void BarcodeScanner::setUpdatedScannedPrices(const vector<float>& prices) {
-	m_scannedItemPrices = prices;
+	m_scannedItemPrices = m_scannedItems.getItemPrices();
 }

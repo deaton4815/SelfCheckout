@@ -29,14 +29,4 @@ private:
 	void updateScannedIDs();
 	void updateScannedDescriptions();
 	void updateScannedPrices();
-
-	vector<string> getUpdatedScannedIDs();
-	vector<string> getUpdatedScannedDescriptions();
-	vector<float> getUpdatedScannedPrices();
-
-	void setUpdatedScannedIDs(const vector<string>&);
-	void setUpdatedScannedDescriptions(const vector<string>&);
-	void setUpdatedScannedPrices(const vector<float>&);
-	
-
 };
