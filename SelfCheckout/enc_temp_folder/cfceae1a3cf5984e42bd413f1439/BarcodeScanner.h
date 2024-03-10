@@ -28,7 +28,7 @@ private:
 
 	void updateScannedIDs();
 	void updateScannedDescriptions();
-	void updateScannedPrices();
+	void updatedScannedPrices();
 
 	vector<string> getUpdatedScannedIDs();
 	vector<string> getUpdatedScannedDescriptions();

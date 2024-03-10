@@ -7,15 +7,12 @@ void BarcodeScanner::scanItem(const int itemNumber) {
 } 
 
 vector<string> BarcodeScanner::getScannedItemIDs() {
-	updateScannedIDs();
 	return m_scannedItemIDs;
 }
 vector<string> BarcodeScanner::getScannedItemDescriptions() { 
-	updateScannedDescriptions();
 	return m_scannedItemDescriptions;
 }
 vector<float> BarcodeScanner::getScannedItemPrices() {
-	updateScannedPrices();
 	return m_scannedItemPrices;
 }
 
@@ -25,7 +22,7 @@ void BarcodeScanner::updateScannedIDs() {
 void BarcodeScanner::updateScannedDescriptions() {
 	setUpdatedScannedDescriptions(getUpdatedScannedDescriptions());
 }
-void BarcodeScanner::updateScannedPrices() {
+void BarcodeScanner::updatedScannedPrices() {
 	setUpdatedScannedPrices(getUpdatedScannedPrices());
 }
 
