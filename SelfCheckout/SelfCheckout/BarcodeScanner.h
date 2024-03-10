@@ -16,12 +16,18 @@ public:
 	void scanItem(const int itemNumber);
 
 	vector<string> getScannedItemIDs();
+	vector<string> getScannedItemDescriptions();
+	vector<float> getScannedItemPrices();
 
 private:
 
 	const Inventory m_itemInventory;
 	Cart m_scannedItems;
 
-	unsigned int m_scannedItemCount{ 0 };
+	vector<string> m_scannedItemIDs;
+	vector<string> m_scannedItemDescriptions;
+	vector<float> m_scannedItemPrices;
+
+	void updateCartInfo();
 
 };

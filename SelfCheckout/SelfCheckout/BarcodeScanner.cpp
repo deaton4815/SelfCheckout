@@ -4,14 +4,19 @@ using namespace std;
 
 void BarcodeScanner::scanItem(const int itemNumber) {
 	m_scannedItems.addItem(m_itemInventory.getItem(itemNumber));
-	m_scannedItemCount += 1;
 } 
 
-vector<string> BarcodeScanner::getScannedItemIDs() {
-	//string* itemIDs{ new string[m_scannedItemCount] };
-	//ctor<string> = m_scannedItems.getItemIDs;
-	//*itemIDs =  m_scannedItems.getItemIDs();
-	//return *itemIDs;
-	vector<string>itemIDs = m_scannedItems.getItemIDs();
-	return itemIDs;
+vector<string> BarcodeScanner::getScannedItemIDs() { return m_scannedItemIDs; }
+
+vector<string> BarcodeScanner::getScannedItemDescriptions() { return m_scannedItemDescriptions; }
+
+vector<float> BarcodeScanner::getScannedItemPrices() { return m_scannedItemPrices; }
+
+void BarcodeScanner::updateCartInfo() {
+
+	m_scannedItemIDs = m_scannedItems.getItemIDs();
+	m_scannedItemDescriptions = m_scannedItems.getItemDescriptions();
+	m_scannedItemPrices = m_scannedItems.getItemPrices();
+
 }
+
