@@ -68,6 +68,53 @@ Inventory::Inventory()
 	, m_milk01(m_milk01ID, m_milk01Description, m_milk01Price)
 {}
 
+Item Inventory::getItem(const int itemNumber) const {
+	const ItemName name{ getItemName(itemNumber) };
+	return identifyItem(name);
+}
+
+Inventory::ItemName Inventory::getItemName(const int itemNumber) const {
+	return static_cast<ItemName>(itemNumber);
+}
+
+Item Inventory::identifyItem(const Inventory::ItemName name) const {
+
+	switch (name) {
+	case ItemName::Meat01:
+		return getMeat01();
+
+	case ItemName::Meat02:
+		return getMeat01();
+
+	case ItemName::IceCream01:
+		return getIceCream01();
+
+	case ItemName::Corn01:
+		return getCorn01();
+
+	case ItemName::CaseWater01:
+		return getCaseWater01();
+
+	case ItemName::PotatoChips01:
+		return getPotatoChips01();
+
+	case ItemName::PotatoChips02:
+		return getPotatoChips02();
+
+	case ItemName::Donuts01:
+		return getDonuts01();
+
+	case ItemName::Sausage01:
+		return getSausage01();
+
+	case ItemName::Eggs01:
+		return getEggs01();
+
+	case ItemName::Milk01:
+		return getMilk01();
+	}
+}
+
 Item Inventory::getMeat01() const { return m_meat01; }
 
 Item Inventory::getMeat02() const { return m_meat02; }
