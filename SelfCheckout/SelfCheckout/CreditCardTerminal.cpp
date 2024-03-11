@@ -2,10 +2,9 @@
 
 int CreditCardTerminal::makePayment() {
 
-	authorizePayment();
-	int confirmationCode{ generateConfirmationCode() };
-	return confirmationCode;
-
+	setConfirmationCode(authorizePayment());
+	int confirmationCode{ getConfirmationCode() };
+	return m_confirmationCode;
 }
 
 int CreditCardTerminal::authorizePayment() {
@@ -27,3 +26,6 @@ int CreditCardTerminal::generateConfirmationCode() {
 	int confirmationCode = rand() % N;
 	return confirmationCode;
 }
+
+int CreditCardTerminal::getConfirmationCode() { return m_confirmationCode; }
+void CreditCardTerminal::setConfirmationCode(int code) { m_confirmationCode = code; }
