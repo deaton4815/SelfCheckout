@@ -65,7 +65,7 @@ Inventory::Inventory()
 	, m_milk01Price(4.00f)
 	, m_milk01(m_milk01ID, m_milk01Description, m_milk01Price)
 {
-	setFullMenu();
+	//setFullMenu();
 }
 
 const Item Inventory::getItem(const int itemNumber) const {
@@ -73,6 +73,7 @@ const Item Inventory::getItem(const int itemNumber) const {
 	return identifyItem(name);
 }
 
+/*
 void Inventory::setFullMenu() {
 	m_itemIDsAll[0] = m_meat01ID;
 	m_itemIDsAll[1] = m_meat02ID;
@@ -113,6 +114,7 @@ void Inventory::setFullMenu() {
 	m_itemPricesAll[10] = m_eggs01Price;
 	m_itemPricesAll[11] = m_milk01Price;
 }
+*/
 
 Inventory::ItemName Inventory::getItemName(const int itemNumber) const {
 	return static_cast<ItemName>(itemNumber);
@@ -122,26 +124,37 @@ const Item Inventory::identifyItem(Inventory::ItemName name) const {
 	switch (name) {
 	case ItemName::Meat01:
 		return getMeat01();
+		break;
 	case ItemName::Meat02:
 		return getMeat01();
+		break;
 	case ItemName::IceCream01:
 		return getIceCream01();
+		break;
 	case ItemName::Corn01:
 		return getCorn01();
+		break;
 	case ItemName::CaseWater01:
 		return getCaseWater01();
+		break;
 	case ItemName::PotatoChips01:
 		return getPotatoChips01();
+		break;
 	case ItemName::PotatoChips02:
 		return getPotatoChips02();
+		break;
 	case ItemName::Donuts01:
 		return getDonuts01();
+		break;
 	case ItemName::Sausage01:
 		return getSausage01();
+		break;
 	case ItemName::Eggs01:
 		return getEggs01();
+		break;
 	case ItemName::Milk01:
 		return getMilk01();
+		break;
 	}
 }
 

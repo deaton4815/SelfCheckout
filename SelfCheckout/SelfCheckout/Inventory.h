@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 #include "Item.h"
 
@@ -91,11 +92,11 @@ private:
 	const float m_milk01Price;
 	const Item m_milk01;
 
-	string m_itemIDsAll[12];
-	string m_itemDescriptionsAll[12];
-	string m_itemPricesAll[12];
+	//vector<string> m_itemIDsAll;
+	//string m_itemDescriptionsAll[12];
+	//string m_itemPricesAll[12];
 
-	void setFullMenu();
+	//void setFullMenu();
 
 	ItemName getItemName(const int) const;
 	const Item identifyItem(ItemName) const;

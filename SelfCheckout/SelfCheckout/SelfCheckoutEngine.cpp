@@ -1,8 +1,28 @@
 #include "SelfCheckoutEngine.h"
 
-//void SelfCheckoutEngine::executeUserSelection()
+SelfCheckoutEngine::SelfCheckoutEngine() {
+	executeCustomerCheckout();
+}
 
-void SelfCheckoutEngine::executeItemSelection(const int itemNumber) {
+void SelfCheckoutEngine::executeCustomerCheckout() {
+
+	m_scoUserInterface.displayOpeningMessage();
+
+	int actionSelection{ 0 };
+
+	//do
+	actionSelection = m_scoUserInterface.getActionSelection();
+
+	switch (actionSelection) {
+	case 1:
+		executeItemSelection();
+
+		break;
+	}
+}
+
+void SelfCheckoutEngine::executeItemSelection() {
+	const int itemNumber{ m_scoUserInterface.getItemSelection() };
 	scanItem(itemNumber);
 	updatePrice();
 

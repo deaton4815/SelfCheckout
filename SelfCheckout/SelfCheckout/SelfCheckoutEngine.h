@@ -2,18 +2,20 @@
 
 #include "BarcodeScanner.h"
 #include "PayService.h"
+#include "UserInterface.h"
 
 class SelfCheckoutEngine
 {
 public:
 
-	void executeItemSelection(const int);
+	SelfCheckoutEngine();
 
 private:
 	//unsigned int getUserSelection();
 	//void executeUserSelection();
 	BarcodeScanner m_scoScanner;
 	PayService m_scoPayService;
+	UserInterface m_scoUserInterface;
 
 	/*
 	vector<unsigned int> m_itemNumbers;
@@ -26,7 +28,8 @@ private:
 	float m_total{ 0.f };
 	*/
 
-	
+	void executeCustomerCheckout();
+	void executeItemSelection();
 	void scanItem(const int);
 	void updatePrice();
 

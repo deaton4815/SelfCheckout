@@ -24,20 +24,4 @@ private:
 	const Inventory m_itemInventory;
 	Cart m_scannedItems;
 
-	/*
-	vector<unsigned int> m_scannedItemNumbers;
-	vector<string> m_scannedItemIDs;
-	vector<string> m_scannedItemDescriptions;
-	vector<float> m_scannedItemPrices;
-	float m_cartSubtotal{ 0.f };
-
-	void updateCartItemInfo();
-	void updateCartPriceInfo();
-
-	void updateScannedNumbers();
-	void updateScannedIDs();
-	void updateScannedDescriptions();
-	void updateScannedPrices();
-	void updateSubtotal();
-	*/
 };

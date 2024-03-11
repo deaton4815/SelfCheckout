@@ -6,8 +6,8 @@
 int main() {
 
 	SelfCheckoutEngine SCOEngine;
-	const int itemNumber1{ 0 };
-	SCOEngine.executeItemSelection(itemNumber1);
+	//const int itemNumber1{ 0 };
+	//SCOEngine.executeItemSelection(itemNumber1);
 
 	//BarcodeScanner scanner;
 	//Inventory testInventory{ scanner.getInventory()};
