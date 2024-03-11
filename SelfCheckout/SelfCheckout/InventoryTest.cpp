@@ -10,7 +10,7 @@ int main() {
 	//Inventory testInventory{ scanner.getInventory()};
 
 	const int itemNumber1{ 0 };
-	const int itemNumber2{ 3 };
+	int itemNumber2{ 3 };
 	//scanner.getItem();
 	scanner.scanItem(itemNumber1);
 	scanner.scanItem(itemNumber2);
