@@ -30,6 +30,9 @@ private:
 	vector<float> m_scannedItemPrices;
 	float m_cartSubtotal{ 0.f };
 
+	void updateCartItemInfo();
+	void updateCartPriceInfo();
+
 	void updateScannedNumbers();
 	void updateScannedIDs();
 	void updateScannedDescriptions();
