@@ -131,6 +131,7 @@
     <ClInclude Include="Cart.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="PayService.h" />
     <ClInclude Include="SelfCheckoutEngine.h" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +140,7 @@
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="InventoryTest.cpp" />
+    <ClCompile Include="PayService.cpp" />
     <ClCompile Include="SelfCheckoutEngine.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
