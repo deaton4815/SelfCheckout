@@ -22,8 +22,11 @@ int CreditCardTerminal::authorizePayment() {
 }
 
 int CreditCardTerminal::generateConfirmationCode() {
-	int N{ 100000 };
-	int confirmationCode = rand() % N;
+	int lowerBound{ 10000 };
+	int upperBound{ 99999 };
+
+	int confirmationCode = rand() % (upperBound - lowerBound + 1)
+		+ lowerBound;
 	return confirmationCode;
 }
 

@@ -16,6 +16,10 @@ void SelfCheckoutEngine::executeCustomerCheckout() {
 		case 1:
 			executeItemSelection();
 			break;
+		case 2:
+			//Remove item
+		case 3:
+			executePayment();
 		}
 	} while (actionSelection != 0);
 }
@@ -33,6 +37,20 @@ void SelfCheckoutEngine::executeItemSelection() {
 	displayCart();
 }
 
+void SelfCheckoutEngine::executePayment() {
+	m_scoUserInterface.displayFullPrice(m_scoPayService.getSubtotal(),
+		m_scoPayService.getTax(), m_scoPayService.getTotal());
+	int paymentType{ 0 };
+	do {
+		paymentType = m_scoUserInterface.getPaymentOption();
+	} while ((paymentType != 1) && (paymentType != 2));
+
+	switch (paymentType) {
+	case 1:
+		executeCardPayment();
+	}
+}
+
 void SelfCheckoutEngine::scanItem(const int itemNumber) {
 	m_scoScanner.scanItem(itemNumber);
 }
@@ -44,24 +62,12 @@ void SelfCheckoutEngine::updatePrice() {
 void SelfCheckoutEngine::displayCart() {
 	m_scoUserInterface.displayCart(m_scoScanner.getScannedItemNumbers(),
 		m_scoScanner.getScannedItemIDs(), m_scoScanner.getScannedItemDescriptions(),
-		m_scoScanner.getScannedItemPrices(), m_scoPayService.getSubtotal(),
-		m_scoPayService.getTax(), m_scoPayService.getTotal());
-}
-/*
-void SelfCheckoutEngine::updatePrice() {
-	updateSubtotal();
-	m_scoPayService.updatePrice(m_subtotal);
-	m_tax = m_scoPayService.getTax();
-	m_total = m_scoPayService.getTotal();
+		m_scoScanner.getScannedItemPrices(), m_scoPayService.getSubtotal());
 }
 
-void SelfCheckoutEngine::updateCartInfo() {
-	m_itemNumbers = m_scoScanner.getScannedItemNumbers();
-	m_itemIDs = m_scoScanner.getScannedItemIDs();
-	m_itemDescriptions = m_scoScanner.getScannedItemDescriptions();
-	m_itemPrices = m_scoScanner.getScannedItemPrices();
-}
+void SelfCheckoutEngine::executeCardPayment() {
+	int confirmationCode = m_scoPayService.payElectronic();
 
-void SelfCheckoutEngine::updateSubtotal() {
-	m_subtotal = m_scoScanner.getSubtotal();
-}*/
+	m_scoUserInterface.displayCardPayment(confirmationCode,
+		m_scoPayService.getAmountPaid(), m_scoPayService.getAmountDue());
+}

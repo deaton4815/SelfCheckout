@@ -11,8 +11,7 @@ public:
 	SelfCheckoutEngine();
 
 private:
-	//unsigned int getUserSelection();
-	//void executeUserSelection();
+
 	BarcodeScanner m_scoScanner;
 	PayService m_scoPayService;
 	UserInterface m_scoUserInterface;

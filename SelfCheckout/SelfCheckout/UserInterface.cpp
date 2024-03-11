@@ -34,7 +34,7 @@ int UserInterface::getPaymentOption() {
 
 void UserInterface::displayCart(vector<unsigned int> itemNumbers,
 	vector<string> itemIDs, vector<string> itemDescriptions,
-	vector<float> itemPrices, float subtotal, float tax, float total) {
+	vector<float> itemPrices, float subtotal) {
 
 	displayCartHeader();
 	
@@ -44,25 +44,41 @@ void UserInterface::displayCart(vector<unsigned int> itemNumbers,
 			itemDescriptions[i], itemPrices[i]);
 	}
 
-	displayPrice(subtotal, tax, total);
+	displaySubtotal(subtotal);
+}
+
+void UserInterface::displayFullPrice(float subtotal, float tax, float total) {
+	cout << "\nAmount due:";
+	displaySubtotal(subtotal);
+	displayTax(tax);
+	displayTotal(total);
+}
+
+void UserInterface::displayCardPayment(int code, float paid, float due) {
+
+	displayCardConfirmation(code);
+	displayAmountPaid(paid);
+	displayAmountDue(due);
+
 }
 
 void UserInterface::displayActionPrompt() {
-	cout << "Please choose one of the following options.\n";
-	cout << "Enter the number that corresponds with your selection." << endl;
+	cout << "\nPlease choose one of the following options.\n";
 }
 
 void UserInterface::displayAvailableActions() {
-	cout << "1 - Scan new item." << endl;
+	cout << "\n1 - Scan new item." << endl;
 	cout << "2 - Remove previous item selection." << endl;
 	cout << "3 - Pay." << endl;
 	
 	cout << "0 - Terminate Program." << endl;
+
+	cout << "\nEnter the number corresponding with your selection: ";
+
 }
 
 void UserInterface::displayAvailableItems() {
-	cout << "Available Items:" << endl;
-	cout << "Enter the number that corresponds with your selection." << endl;
+	cout << "\n\nAvailable Items:" << endl;
 	cout << "1 - Meat01" << endl;
 	cout << "2 - Meat02" << endl;
 	cout << "3 - Icecream01" << endl;
@@ -75,6 +91,8 @@ void UserInterface::displayAvailableItems() {
 	cout << "10 - Sausage01" << endl;
 	cout << "11 - Eggs01" << endl;
 	cout << "12 - Milk01" << endl;
+
+	cout << "\nEnter the number corresponding with your selection: ";
 }
 
 void UserInterface::displayItem(unsigned int number, string id,
@@ -183,15 +201,19 @@ void UserInterface::displayUnitCost(float price) {
 	cout << endl;
 }
 
-void UserInterface::displayPrice(float subtotal, float tax, float total) {
+void UserInterface::displaySubtotal(float subtotal) {
 	cout << "\nSubtotal: $";
 	displayTwoDecimalFloat(subtotal);
 	cout << endl;
+	}
 
+void UserInterface::displayTax(float tax) {
 	cout << "Tax:      $";
 	displayTwoDecimalFloat(tax);
 	cout << endl;
+}
 
+void UserInterface::displayTotal(float total) {
 	cout << "Total:    $";
 	displayTwoDecimalFloat(total);
 	cout << endl;
@@ -201,6 +223,23 @@ void UserInterface::displayPaymentOptions() {
 	cout << "\nPayment options:" << endl;
 	cout << "1 - Credit or debit." << endl;
 	cout << "2 - Cash payment." << endl;
+}
+
+void UserInterface::displayCardConfirmation(int code) {
+	cout << "\nPayment Authorized!" << endl;
+	cout << "Confirmation Code: " << code << endl;
+}
+
+void UserInterface::displayAmountPaid(float amount) {
+	cout << "\nAmount paid: $";
+	displayTwoDecimalFloat(amount);
+	cout << endl;
+}
+
+void UserInterface::displayAmountDue(float amount) {
+	cout << "Remaining due: $";
+	displayTwoDecimalFloat(amount);
+	cout << endl;
 }
 
 int UserInterface::getUserSelection() {

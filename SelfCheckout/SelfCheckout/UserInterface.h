@@ -20,7 +20,11 @@ public:
 	int getPaymentOption();
 
 	void displayCart(vector<unsigned int>, vector<string>,
-		vector<string>, vector<float>, float, float, float);
+		vector<string>, vector<float>, float);
+
+	void displayFullPrice(float, float, float);
+
+	void displayCardPayment(int, float, float);
 
 private:
 
@@ -37,12 +41,18 @@ private:
 	void displayProductDescription(string);
 	void displayUnitCost(float);
 
-	void displayPrice(float, float, float);
+	void displaySubtotal(float);
+	void displayTax(float);
+	void displayTotal(float);
 
 	void displayPaymentOptions();
 
-	int getUserSelection();
+	void displayCardConfirmation(int);
 
+	void displayAmountPaid(float);
+	void displayAmountDue(float);
+
+	int getUserSelection();
 	void displayTwoDecimalFloat(float);
 
 };
