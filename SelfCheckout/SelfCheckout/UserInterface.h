@@ -17,6 +17,7 @@ public:
 
 	int getActionSelection();
 	int getItemSelection();
+	int getPaymentOption();
 
 	void displayCart(vector<unsigned int>, vector<string>,
 		vector<string>, vector<float>, float, float, float);
@@ -37,6 +38,8 @@ private:
 	void displayUnitCost(float);
 
 	void displayPrice(float, float, float);
+
+	void displayPaymentOptions();
 
 	int getUserSelection();
 

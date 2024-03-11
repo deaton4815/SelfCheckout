@@ -10,6 +10,10 @@ float PayService::getSubtotal() { return m_subtotal; }
 float PayService::getTax() { return m_tax; }
 float PayService::getTotal() { return m_total; }
 
+void PayService::payElectronic() {
+
+}
+
 float PayService::calculateTax() { return m_subtotal * m_taxRate; }
 float PayService::calculateTotal() { return m_subtotal + m_tax; }
 

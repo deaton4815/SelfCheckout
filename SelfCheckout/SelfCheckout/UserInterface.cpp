@@ -26,6 +26,12 @@ int UserInterface::getItemSelection() {
 	return selection;
 }
 
+int UserInterface::getPaymentOption() {
+	displayPaymentOptions();
+	int selection{ getUserSelection() };
+	return selection;
+}
+
 void UserInterface::displayCart(vector<unsigned int> itemNumbers,
 	vector<string> itemIDs, vector<string> itemDescriptions,
 	vector<float> itemPrices, float subtotal, float tax, float total) {
@@ -48,6 +54,8 @@ void UserInterface::displayActionPrompt() {
 
 void UserInterface::displayAvailableActions() {
 	cout << "1 - Scan new item." << endl;
+	cout << "2 - Remove previous item selection." << endl;
+	cout << "3 - Pay." << endl;
 	
 	cout << "0 - Terminate Program." << endl;
 }
@@ -187,6 +195,12 @@ void UserInterface::displayPrice(float subtotal, float tax, float total) {
 	cout << "Total:    $";
 	displayTwoDecimalFloat(total);
 	cout << endl;
+}
+
+void UserInterface::displayPaymentOptions() {
+	cout << "\nPayment options:" << endl;
+	cout << "1 - Credit or debit." << endl;
+	cout << "2 - Cash payment." << endl;
 }
 
 int UserInterface::getUserSelection() {

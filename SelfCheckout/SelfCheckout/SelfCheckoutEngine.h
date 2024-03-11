@@ -19,7 +19,11 @@ private:
 
 	void executeCustomerCheckout();
 	void executeItemSelection();
+	void executePayment();
+
 	void scanItem(const int);
 	void updatePrice();
 	void displayCart();
+
+	void executeCardPayment();
 };
