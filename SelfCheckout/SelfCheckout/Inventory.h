@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 #include "Item.h"
 
@@ -13,6 +14,7 @@ public:
 	Inventory();
 
 	const Item getItem(const int) const;
+	
 
 private:
 
@@ -20,6 +22,7 @@ private:
 		Meat01 = 0,
 		Meat02,
 		IceCream01,
+		IceCream02,
 		Corn01,
 		CaseWater01,
 		PotatoChips01,
@@ -90,12 +93,19 @@ private:
 	const float m_milk01Price;
 	const Item m_milk01;
 
+	//vector<string> m_itemIDsAll;
+	//string m_itemDescriptionsAll[12];
+	//string m_itemPricesAll[12];
+
+	//void setFullMenu();
+
 	ItemName getItemName(const int) const;
 	const Item identifyItem(ItemName) const;
 
 	const Item getMeat01() const;
 	const Item getMeat02() const;
 	const Item getIceCream01() const;
+	const Item getIceCream02() const;
 	const Item getCorn01() const;
 	const Item getCaseWater01() const;
 	const Item getPotatoChips01() const;
