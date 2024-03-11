@@ -4,7 +4,7 @@ using namespace std;
 
 void BarcodeScanner::scanItem(const int itemNumber) {
 	m_scannedItems.addItem(m_itemInventory.getItem(itemNumber));
-} 
+}
 
 vector<unsigned int> BarcodeScanner::getScannedItemNumbers() {
 	return m_scannedItems.getItemNumbers();

@@ -6,6 +6,7 @@ void PayService::updatePrice(float subtotal) {
 	setTotal(calculateTotal());
 }
 
+float PayService::getSubtotal() { return m_subtotal; }
 float PayService::getTax() { return m_tax; }
 float PayService::getTotal() { return m_total; }
 

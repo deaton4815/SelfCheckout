@@ -32,6 +32,7 @@ private:
 	void executeItemSelection();
 	void scanItem(const int);
 	void updatePrice();
+	void displayCart();
 
 	/*
 	void updateCartInfo();

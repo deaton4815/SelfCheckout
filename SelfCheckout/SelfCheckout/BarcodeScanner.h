@@ -8,7 +8,7 @@
 
 class BarcodeScanner
 {
-	
+
 public:
 
 	void scanItem(const int itemNumber);

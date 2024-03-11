@@ -16,9 +16,10 @@ void SelfCheckoutEngine::executeCustomerCheckout() {
 	switch (actionSelection) {
 	case 1:
 		executeItemSelection();
-
 		break;
 	}
+
+	//while
 }
 
 void SelfCheckoutEngine::executeItemSelection() {
@@ -38,6 +39,12 @@ void SelfCheckoutEngine::updatePrice() {
 	m_scoPayService.updatePrice(m_scoScanner.getSubtotal());
 }
 
+void SelfCheckoutEngine::displayCart() {
+	m_scoUserInterface.displayCart(m_scoScanner.getScannedItemNumbers(),
+		m_scoScanner.getScannedItemIDs(), m_scoScanner.getScannedItemDescriptions(),
+		m_scoScanner.getScannedItemPrices(), m_scoPayService.getSubtotal(),
+		m_scoPayService.getTax(), m_scoPayService.getTotal());
+}
 /*
 void SelfCheckoutEngine::updatePrice() {
 	updateSubtotal();

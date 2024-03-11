@@ -6,6 +6,7 @@ public:
 
 	void updatePrice(float);
 
+	float getSubtotal();
 	float getTax();
 	float getTotal();
 	
