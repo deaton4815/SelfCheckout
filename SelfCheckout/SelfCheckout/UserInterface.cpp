@@ -32,6 +32,15 @@ int UserInterface::getPaymentOption() {
 	return selection;
 }
 
+float UserInterface::getCash(bool isFirst) {
+
+	float cash{ 0.f };
+
+	displayCashPaymentPrompt(isFirst);
+	cin >> cash;
+	return cash;
+}
+
 void UserInterface::displayCart(vector<unsigned int> itemNumbers,
 	vector<string> itemIDs, vector<string> itemDescriptions,
 	vector<float> itemPrices, float subtotal) {
@@ -59,6 +68,14 @@ void UserInterface::displayCardPayment(int code, float paid, float due) {
 	displayCardConfirmation(code);
 	displayAmountPaid(paid);
 	displayAmountDue(due);
+
+}
+
+void UserInterface::displayCashPayment(float paid, float due, float change) {
+
+	displayAmountPaid(paid);
+	displayAmountDue(due);
+	displayChange(change);
 
 }
 
@@ -230,15 +247,30 @@ void UserInterface::displayCardConfirmation(int code) {
 	cout << "Confirmation Code: " << code << endl;
 }
 
-void UserInterface::displayAmountPaid(float amount) {
+void UserInterface::displayCashPaymentPrompt(bool isFirst) {
+	if (isFirst) {
+		cout << "\nPlease input cash amount entered: $";
+	}
+	else {
+		cout << "\nNot enough! Please enter more cash: $";
+	}
+}
+
+void UserInterface::displayAmountPaid(float paid) {
 	cout << "\nAmount paid: $";
-	displayTwoDecimalFloat(amount);
+	displayTwoDecimalFloat(paid);
 	cout << endl;
 }
 
-void UserInterface::displayAmountDue(float amount) {
+void UserInterface::displayAmountDue(float due) {
 	cout << "Remaining due: $";
-	displayTwoDecimalFloat(amount);
+	displayTwoDecimalFloat(due);
+	cout << endl;
+}
+
+void UserInterface::displayChange(float change) {
+	cout << "Change dispensed: $";
+	displayTwoDecimalFloat(change);
 	cout << endl;
 }
 

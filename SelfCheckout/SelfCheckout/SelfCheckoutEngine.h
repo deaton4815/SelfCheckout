@@ -25,4 +25,5 @@ private:
 	void displayCart();
 
 	void executeCardPayment();
+	void executeCashPayment();
 };

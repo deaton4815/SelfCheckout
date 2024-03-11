@@ -9,6 +9,8 @@ int CreditCardTerminal::makePayment() {
 
 int CreditCardTerminal::authorizePayment() {
 
+	std::cout << "Authorizing payment ..." << std::endl;
+
 	int confirmationCode{ 0 };
 
 	bool paymentAuthorized{ 1 };
@@ -18,6 +20,8 @@ int CreditCardTerminal::authorizePayment() {
 	else {
 		confirmationCode = 0;
 	}
+
+	std::cout << "Payment authorized!" << std::endl;
 	return confirmationCode;
 }
 

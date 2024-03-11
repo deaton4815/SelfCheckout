@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CreditCardTerminal.h"
+#include "ChangeRepository.h"
 
 class PayService
 {
@@ -15,12 +16,17 @@ public:
 
 	int payElectronic();
 
+	bool payCash(float);
+	float getChange();
+
 	float getAmountDue();
 	float getAmountPaid();
 	
 private:
 
 	CreditCardTerminal m_scoCreditCardTerminal;
+	ChangeRepository m_scoChange;
+
 
 	float m_subtotal{ 0.f };
 	float m_tax{ 0.f };
@@ -32,6 +38,8 @@ private:
 
 	float calculateTax();
 	float calculateTotal();
+
+	void resetPayService();
 
 	void setSubtotal(float);
 	void setTax(float);

@@ -129,21 +129,25 @@
   <ItemGroup>
     <ClInclude Include="BarcodeScanner.h" />
     <ClInclude Include="Cart.h" />
+    <ClInclude Include="ChangeRepository.h" />
     <ClInclude Include="CreditCardTerminal.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="PayService.h" />
+    <ClInclude Include="SCOControlCenter.h" />
     <ClInclude Include="SelfCheckoutEngine.h" />
     <ClInclude Include="UserInterface.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BarcodeScanner.cpp" />
     <ClCompile Include="Cart.cpp" />
+    <ClCompile Include="ChangeRepository.cpp" />
     <ClCompile Include="CreditCardTerminal.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="InventoryTest.cpp" />
     <ClCompile Include="PayService.cpp" />
+    <ClCompile Include="SCOControlCenter.cpp" />
     <ClCompile Include="SelfCheckoutEngine.cpp" />
     <ClCompile Include="UserInterface.cpp" />
   </ItemGroup>

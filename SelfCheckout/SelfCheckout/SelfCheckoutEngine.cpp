@@ -48,6 +48,10 @@ void SelfCheckoutEngine::executePayment() {
 	switch (paymentType) {
 	case 1:
 		executeCardPayment();
+		break;
+	case 2:
+		executeCashPayment();
+		break;
 	}
 }
 
@@ -70,4 +74,16 @@ void SelfCheckoutEngine::executeCardPayment() {
 
 	m_scoUserInterface.displayCardPayment(confirmationCode,
 		m_scoPayService.getAmountPaid(), m_scoPayService.getAmountDue());
+}
+
+void SelfCheckoutEngine::executeCashPayment() {
+
+	bool isEnough{ false };
+	bool isFirst{ true };
+	do {
+		isEnough = m_scoPayService.payCash(m_scoUserInterface.getCash(isFirst));
+		isFirst = false;
+	} while (!isEnough);
+	m_scoUserInterface.displayCashPayment(m_scoPayService.getAmountPaid(),
+		m_scoPayService.getAmountDue(), m_scoPayService.getChange());
 }
