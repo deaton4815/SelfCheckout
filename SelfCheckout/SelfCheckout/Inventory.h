@@ -13,6 +13,7 @@ public:
 	Inventory();
 
 	const Item getItem(const int) const;
+	
 
 private:
 
@@ -89,6 +90,12 @@ private:
 	const string m_milk01Description;
 	const float m_milk01Price;
 	const Item m_milk01;
+
+	string m_itemIDsAll[12];
+	string m_itemDescriptionsAll[12];
+	string m_itemPricesAll[12];
+
+	void setFullMenu();
 
 	ItemName getItemName(const int) const;
 	const Item identifyItem(ItemName) const;
