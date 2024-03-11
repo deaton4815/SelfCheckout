@@ -9,7 +9,7 @@ UserInterface::UserInterface() {
 */
 
 void UserInterface::displayOpeningMessage() {
-	cout << "Hello and welcome to self-checkout!" << endl;
+	cout << "Hello and welcome to self-checkout!" << endl << endl;
 }
 
 int UserInterface::getActionSelection() {
@@ -48,6 +48,8 @@ void UserInterface::displayActionPrompt() {
 
 void UserInterface::displayAvailableActions() {
 	cout << "1 - Scan new item." << endl;
+	
+	cout << "0 - Terminate Program." << endl;
 }
 
 void UserInterface::displayAvailableItems() {
@@ -70,12 +72,17 @@ void UserInterface::displayAvailableItems() {
 void UserInterface::displayItem(unsigned int number, string id,
 	string description, float price) {
 	displayItemNumber(number);
+	displayProductID(id);
+	displayProductDescription(description);
+	displayUnitCost(price);
 }
 
 void UserInterface::displayCartHeader() {
 	cout << "Item # | Product ID    | Product Description";
 	cout << "                 | Unit Cost" << endl;
-}
+	cout << "--------------------------------------------";
+	cout << "----------------------------" << endl;
+} 
 
 void UserInterface::displayItemNumber(unsigned int number) {
 	cout << number;
@@ -136,6 +143,9 @@ void UserInterface::displayProductDescription(string description) {
 		break;
 	case 17:
 		cout << "                 ";
+		break;
+	case 18:
+		cout << "                  ";
 		break;
 	case 19:
 		cout << "                   ";

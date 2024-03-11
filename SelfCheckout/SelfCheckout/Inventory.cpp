@@ -30,7 +30,7 @@ Inventory::Inventory()
 	, m_corn01Price(2.00f)
 	, m_corn01(m_corn01ID, m_corn01Description, m_corn01Price)
 
-	, m_caseWaters01ID("Casewater")
+	, m_caseWaters01ID("Casewater01")
 	, m_caseWaters01Description("24 Bottles 16-Ox of Deer Park Water")
 	, m_caseWaters01Price(4.99f)
 	, m_caseWater01(m_caseWaters01ID, m_caseWaters01Description, m_caseWaters01Price)
@@ -126,10 +126,13 @@ const Item Inventory::identifyItem(Inventory::ItemName name) const {
 		return getMeat01();
 		break;
 	case ItemName::Meat02:
-		return getMeat01();
+		return getMeat02();
 		break;
 	case ItemName::IceCream01:
 		return getIceCream01();
+		break;
+	case ItemName::IceCream02:
+		return getIceCream02();
 		break;
 	case ItemName::Corn01:
 		return getCorn01();
@@ -161,6 +164,7 @@ const Item Inventory::identifyItem(Inventory::ItemName name) const {
 const Item Inventory::getMeat01() const { return m_meat01; }
 const Item Inventory::getMeat02() const { return m_meat02; }
 const Item Inventory::getIceCream01() const { return m_iceCream01; }
+const Item Inventory::getIceCream02() const { return m_iceCream02; }
 const Item Inventory::getCorn01() const { return m_corn01; }
 const Item Inventory::getCaseWater01() const { return m_caseWater01; }
 const Item Inventory::getPotatoChips01() const { return m_potatoChips01; }

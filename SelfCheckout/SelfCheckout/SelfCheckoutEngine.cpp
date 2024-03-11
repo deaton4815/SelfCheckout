@@ -9,26 +9,28 @@ void SelfCheckoutEngine::executeCustomerCheckout() {
 	m_scoUserInterface.displayOpeningMessage();
 
 	int actionSelection{ 0 };
+	do {
+		actionSelection = m_scoUserInterface.getActionSelection();
 
-	//do
-	actionSelection = m_scoUserInterface.getActionSelection();
-
-	switch (actionSelection) {
-	case 1:
-		executeItemSelection();
-		break;
-	}
-
-	//while
+		switch (actionSelection) {
+		case 1:
+			executeItemSelection();
+			break;
+		}
+	} while (actionSelection != 0);
 }
 
 void SelfCheckoutEngine::executeItemSelection() {
-	const int itemNumber{ m_scoUserInterface.getItemSelection() };
+
+	int itemNumber{ 0 };
+	do {
+		itemNumber = m_scoUserInterface.getItemSelection();
+	} while ((itemNumber < 0) || (itemNumber > 12));
+	
+	--itemNumber;
 	scanItem(itemNumber);
 	updatePrice();
-
-	//updateCartInfo();
-	//updatePrice();
+	displayCart();
 }
 
 void SelfCheckoutEngine::scanItem(const int itemNumber) {
