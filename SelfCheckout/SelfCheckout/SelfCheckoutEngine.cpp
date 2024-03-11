@@ -4,14 +4,21 @@
 
 void SelfCheckoutEngine::executeItemSelection(const int itemNumber) {
 	scanItem(itemNumber);
-	updateCartInfo();
 	updatePrice();
+
+	//updateCartInfo();
+	//updatePrice();
 }
 
 void SelfCheckoutEngine::scanItem(const int itemNumber) {
 	m_scoScanner.scanItem(itemNumber);
 }
 
+void SelfCheckoutEngine::updatePrice() {
+	m_scoPayService.updatePrice(m_scoScanner.getSubtotal());
+}
+
+/*
 void SelfCheckoutEngine::updatePrice() {
 	updateSubtotal();
 	m_scoPayService.updatePrice(m_subtotal);
@@ -28,4 +35,4 @@ void SelfCheckoutEngine::updateCartInfo() {
 
 void SelfCheckoutEngine::updateSubtotal() {
 	m_subtotal = m_scoScanner.getSubtotal();
-}
+}*/

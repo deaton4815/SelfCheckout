@@ -4,16 +4,31 @@ using namespace std;
 
 void BarcodeScanner::scanItem(const int itemNumber) {
 	m_scannedItems.addItem(m_itemInventory.getItem(itemNumber));
-	updateCartItemInfo();
-	updateCartPriceInfo();
+	//updateCartItemInfo();
+	//updateCartPriceInfo();
 } 
 
-vector<unsigned int> BarcodeScanner::getScannedItemNumbers() { return m_scannedItemNumbers; }
-vector<string> BarcodeScanner::getScannedItemIDs() { return m_scannedItemIDs; }
-vector<string> BarcodeScanner::getScannedItemDescriptions() { return m_scannedItemDescriptions; }
-vector<float> BarcodeScanner::getScannedItemPrices() { return m_scannedItemPrices; }
-float BarcodeScanner::getSubtotal() { return m_cartSubtotal; }
+vector<unsigned int> BarcodeScanner::getScannedItemNumbers() {
+	return m_scannedItems.getItemNumbers();
+}
 
+vector<string> BarcodeScanner::getScannedItemIDs() {
+	return m_scannedItems.getItemIDs();
+}
+
+vector<string> BarcodeScanner::getScannedItemDescriptions() {
+	return m_scannedItems.getItemDescriptions();
+}
+
+vector<float> BarcodeScanner::getScannedItemPrices() {
+	return m_scannedItems.getItemPrices();
+}
+
+float BarcodeScanner::getSubtotal() {
+	return m_scannedItems.getSubtotal();
+}
+
+/*
 void BarcodeScanner::updateCartItemInfo() {
 	updateScannedNumbers();
 	updateScannedIDs();
@@ -37,7 +52,7 @@ void BarcodeScanner::updateScannedPrices() {
 void BarcodeScanner::updateSubtotal() {
 	m_cartSubtotal = m_scannedItems.getSubtotal();
 }
-
+*/
 /*
 vector<unsigned int> BarcodeScanner::getScannedItemNumbers() {
 	updateScannedNumbers();
