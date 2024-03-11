@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="BarcodeScanner.h" />
     <ClInclude Include="Cart.h" />
+    <ClInclude Include="CashRepository.h" />
     <ClInclude Include="ChangeRepository.h" />
     <ClInclude Include="CreditCardTerminal.h" />
     <ClInclude Include="Inventory.h" />
@@ -141,6 +142,7 @@
   <ItemGroup>
     <ClCompile Include="BarcodeScanner.cpp" />
     <ClCompile Include="Cart.cpp" />
+    <ClCompile Include="CashRepository.cpp" />
     <ClCompile Include="ChangeRepository.cpp" />
     <ClCompile Include="CreditCardTerminal.cpp" />
     <ClCompile Include="Inventory.cpp" />

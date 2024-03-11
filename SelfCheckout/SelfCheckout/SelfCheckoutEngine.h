@@ -26,4 +26,6 @@ private:
 
 	void executeCardPayment();
 	void executeCashPayment();
+
+	void emptyCashPurchases();
 };

@@ -13,8 +13,8 @@ private:
 
 	SCOControlCenter m_scoControlCenter;
 
-	float m_repositoryAmount{ 200 };
-	float m_minAmount{ 50 };
+	float m_repositoryAmount{ 200.00 };
+	float m_minAmount{ 50.00 };
 
 	void updateRepositoryAmount(float);
 	void addChange(float);

@@ -16,4 +16,3 @@ private:
 	void displayTwoDecimalFloat(float);
 
 };
-

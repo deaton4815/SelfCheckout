@@ -1,15 +1,5 @@
 #include "PayService.h"
 
-void PayService::updatePrice(float subtotal) {
-	setSubtotal(subtotal);
-	setTax(calculateTax());
-	setTotal(calculateTotal());
-}
-
-float PayService::getSubtotal() { return m_subtotal; }
-float PayService::getTax() { return m_tax; }
-float PayService::getTotal() { return m_total; }
-
 int PayService::payElectronic() {
 	setAmountDue(m_total);
 	int confirmationCode{ m_scoCreditCardTerminal.makePayment() };
@@ -23,7 +13,8 @@ int PayService::payElectronic() {
 bool PayService::payCash(float cashPayment) {
 	setAmountDue(m_total);
 	setAmountPaid(m_amountPaid + cashPayment);
-	// Add to cash repository
+	
+	addCashPurchase(cashPayment);
 
 	bool isEnough{ false };
 	if (m_amountPaid > m_amountDue) {
@@ -37,11 +28,34 @@ float PayService::getChange(){
 	return change;
 }
 
+float PayService::emptyCashPurchases() {
+	return m_scoCashPurchase.emptyRepository();
+}
+
+void PayService::updatePrice(float subtotal) {
+	setSubtotal(subtotal);
+	setTax(calculateTax());
+	setTotal(calculateTotal());
+}
+
+float PayService::getSubtotal() { return m_subtotal; }
+float PayService::getTax() { return m_tax; }
+float PayService::getTotal() { return m_total; }
 float PayService::getAmountDue() { return m_amountDue; }
 float PayService::getAmountPaid() { return m_amountPaid; }
 
+void PayService::addCashPurchase(float cashPayment) {
+	m_scoCashPurchase.depositCash(cashPayment);
+}
+
 float PayService::calculateTax() { return m_subtotal * m_taxRate; }
 float PayService::calculateTotal() { return m_subtotal + m_tax; }
+
+void PayService::setSubtotal(float subtotal) { m_subtotal = subtotal; }
+void PayService::setTax(float tax) { m_tax = tax; }
+void PayService::setTotal(float total) { m_total = total; }
+void PayService::setAmountDue(float amount) { m_amountDue = amount; }
+void PayService::setAmountPaid(float amount) { m_amountPaid = amount; }
 
 void PayService::resetPayService() {
 	setSubtotal(0);
@@ -50,9 +64,3 @@ void PayService::resetPayService() {
 	setAmountDue(0);
 	setAmountPaid(0);
 }
-
-void PayService::setSubtotal(float subtotal) { m_subtotal = subtotal; }
-void PayService::setTax(float tax) { m_tax = tax; }
-void PayService::setTotal(float total) { m_total = total; }
-void PayService::setAmountDue(float amount) { m_amountDue = amount; }
-void PayService::setAmountPaid(float amount) { m_amountPaid = amount; }

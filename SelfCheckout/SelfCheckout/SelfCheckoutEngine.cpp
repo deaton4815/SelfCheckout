@@ -87,3 +87,8 @@ void SelfCheckoutEngine::executeCashPayment() {
 	m_scoUserInterface.displayCashPayment(m_scoPayService.getAmountPaid(),
 		m_scoPayService.getAmountDue(), m_scoPayService.getChange());
 }
+
+void SelfCheckoutEngine::emptyCashPurchases() {
+	float purchases{ m_scoPayService.emptyCashPurchases() };
+
+}
