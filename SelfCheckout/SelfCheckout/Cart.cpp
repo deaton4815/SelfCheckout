@@ -54,5 +54,5 @@ float Cart::getSubtotal() { return m_subtotal; }
 void Cart::calculateSubtotal() {
 
 	vector<float> itemPrices = getItemPrices();
-	m_subtotal = accumulate(itemPrices.begin(), itemPrices.end(), 0);
+	m_subtotal = accumulate(itemPrices.begin(), itemPrices.end(), 0.f);
 }

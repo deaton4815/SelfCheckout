@@ -5,6 +5,9 @@
 
 class SelfCheckoutEngine
 {
+public:
+
+	void executeItemSelection(const int);
 
 private:
 	//unsigned int getUserSelection();
@@ -23,7 +26,7 @@ private:
 	float m_total{ 0.f };
 	*/
 
-	void executeItemSelection(const int);
+	
 	void scanItem(const int);
 	void updatePrice();
 

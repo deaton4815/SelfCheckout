@@ -1,20 +1,24 @@
-#include "BarcodeScanner.h"
-#include "Inventory.h"
+#include "SelfCheckoutEngine.h"
 
 #include <iostream>
 #include<string>
 
 int main() {
 
-	BarcodeScanner scanner;
+	SelfCheckoutEngine SCOEngine;
+	const int itemNumber1{ 0 };
+	SCOEngine.executeItemSelection(itemNumber1);
+
+	//BarcodeScanner scanner;
 	//Inventory testInventory{ scanner.getInventory()};
 
-	const int itemNumber1{ 0 };
-	int itemNumber2{ 3 };
+
+	//int itemNumber2{ 3 };
 	//scanner.getItem();
-	scanner.scanItem(itemNumber1);
-	scanner.scanItem(itemNumber2);
-	scanner.getScannedItemIDs();
+	//scanner.scanItem(itemNumber1);
+	//scanner.scanItem(itemNumber2);
+	//scanner.getScannedItemIDs();
+
 
 
 
