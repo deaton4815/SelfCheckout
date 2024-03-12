@@ -24,10 +24,9 @@ private:
 	void executeEmployeeSelection();
 
 	void executeItemSelection();
+	void executeItemRemoval();
 	void executePayment();
 
-	void scanItem(const int);
-	void updatePrice();
 	void displayCart();
 	void displayFullPrice();
 
@@ -35,7 +34,7 @@ private:
 	void executeCashPayment();
 
 	void printCardReceipt(int);
-	void printCashReceipt();
+	void printCashReceipt(float);
 
 
 	void emptyCashPurchases();

@@ -6,6 +6,10 @@ void BarcodeScanner::scanItem(const int itemNumber) {
 	m_scannedItems.addItem(m_itemInventory.getItem(itemNumber));
 }
 
+void BarcodeScanner::removeItem() {
+	m_scannedItems.removeItem();
+}
+
 vector<unsigned int> BarcodeScanner::getScannedItemNumbers() {
 	return m_scannedItems.getItemNumbers();
 }

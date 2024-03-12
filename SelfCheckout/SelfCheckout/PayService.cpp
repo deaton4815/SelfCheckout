@@ -44,6 +44,14 @@ float PayService::getTotal() { return m_total; }
 float PayService::getAmountDue() { return m_amountDue; }
 float PayService::getAmountPaid() { return m_amountPaid; }
 
+void PayService::resetPayService() {
+	setSubtotal(0);
+	setTax(0);
+	setTotal(0);
+	setAmountDue(0);
+	setAmountPaid(0);
+}
+
 void PayService::addCashPurchase(float cashPayment) {
 	m_scoCashPurchase.depositCash(cashPayment);
 }
@@ -56,11 +64,3 @@ void PayService::setTax(float tax) { m_tax = tax; }
 void PayService::setTotal(float total) { m_total = total; }
 void PayService::setAmountDue(float amount) { m_amountDue = amount; }
 void PayService::setAmountPaid(float amount) { m_amountPaid = amount; }
-
-void PayService::resetPayService() {
-	setSubtotal(0);
-	setTax(0);
-	setTotal(0);
-	setAmountDue(0);
-	setAmountPaid(0);
-}

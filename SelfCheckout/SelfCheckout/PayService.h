@@ -21,6 +21,8 @@ public:
 	float getTotal();
 	float getAmountDue();
 	float getAmountPaid();
+
+	void resetPayService();
 	
 private:
 
@@ -47,6 +49,4 @@ private:
 	void setTotal(float);
 	void setAmountDue(float);
 	void setAmountPaid(float);
-
-	void resetPayService();
 };

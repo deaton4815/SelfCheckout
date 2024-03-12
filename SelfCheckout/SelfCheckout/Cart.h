@@ -19,6 +19,7 @@ public:
 	float getSubtotal();
 
 	void addItem(const Item&);
+	void removeItem();
 	void resetCart();
 
 private:

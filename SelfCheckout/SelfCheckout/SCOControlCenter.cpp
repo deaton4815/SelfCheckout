@@ -9,7 +9,7 @@ float SCOControlCenter::executeLowChange(float changeLevel) {
 }
 
 void SCOControlCenter::displayLowChangeMessage(float changeLevel) {
-	"\n\n--------------------SCO CONTROL CENTER--------------------";
+	cout << "\n\n--------------------SCO CONTROL CENTER--------------------";
 	cout << "\nAlert! Change has fallen to $";
 	displayTwoDecimalFloat(changeLevel);
 	cout << endl;
@@ -19,6 +19,7 @@ float SCOControlCenter::getMoreChange() {
 	float addedChange{ 0 };
 	cout << "Enter more change to continue service." << endl;
 	cout << "Amount Entered: $";
+	cin >> addedChange;
 	return addedChange;
 }
 

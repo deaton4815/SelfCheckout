@@ -12,6 +12,7 @@ class BarcodeScanner
 public:
 
 	void scanItem(const int itemNumber);
+	void removeItem();
 
 	vector<unsigned int> getScannedItemNumbers();
 	vector<string> getScannedItemIDs();

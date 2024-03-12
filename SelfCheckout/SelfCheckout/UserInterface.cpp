@@ -280,7 +280,7 @@ void UserInterface::displayPaymentOptions() {
 	cout << "2 - Cash payment" << endl;
 
 	cout << "\n0 - Return" << endl;
-	cout << "\nEnter selection number: " << endl;
+	cout << "\nEnter selection number: ";
 }
 
 void UserInterface::displayCardConfirmation(int code) {

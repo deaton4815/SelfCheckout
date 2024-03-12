@@ -46,7 +46,8 @@ void SelfCheckoutEngine::executeCustomerSelection() {
 			executeItemSelection();
 			break;
 		case 2:
-			//Remove item
+			executeItemRemoval();
+			break;
 		case 3:
 			executePayment();
 			customerSelection = 0;
@@ -79,8 +80,15 @@ void SelfCheckoutEngine::executeItemSelection() {
 	} while ((itemNumber < 1) || (itemNumber > 12));
 	
 	--itemNumber;
-	scanItem(itemNumber);
-	updatePrice();
+
+	m_scoScanner.scanItem(itemNumber);
+	m_scoPayService.updatePrice(m_scoScanner.getSubtotal());
+	displayCart();
+}
+
+void SelfCheckoutEngine::executeItemRemoval() {
+	m_scoScanner.removeItem();
+	m_scoPayService.updatePrice(m_scoScanner.getSubtotal());
 	displayCart();
 }
 
@@ -101,14 +109,6 @@ void SelfCheckoutEngine::executePayment() {
 	default:
 		break;
 	}
-}
-
-void SelfCheckoutEngine::scanItem(const int itemNumber) {
-	m_scoScanner.scanItem(itemNumber);
-}
-
-void SelfCheckoutEngine::updatePrice() {
-	m_scoPayService.updatePrice(m_scoScanner.getSubtotal());
 }
 
 void SelfCheckoutEngine::displayCart() {
@@ -138,7 +138,9 @@ void SelfCheckoutEngine::executeCashPayment() {
 		isFirst = false;
 	} while (!isEnough);
 
-	printCashReceipt();
+	float change{ m_scoPayService.getChange() };
+
+	printCashReceipt(change);
 }
 
 void SelfCheckoutEngine::printCardReceipt(int confirmationCode) {
@@ -151,13 +153,13 @@ void SelfCheckoutEngine::printCardReceipt(int confirmationCode) {
 	m_scoUserInterface.displayReceiptFooter();
 }
 
-void SelfCheckoutEngine::printCashReceipt() {
+void SelfCheckoutEngine::printCashReceipt(float change) {
 	m_scoUserInterface.displayReceiptHeader();
 	displayCart();
 	m_scoUserInterface.displayReceiptFooter();
 
 	m_scoUserInterface.displayCashPayment(m_scoPayService.getAmountPaid(),
-		m_scoPayService.getAmountDue(), m_scoPayService.getChange());
+		m_scoPayService.getAmountDue(), change);
 	m_scoUserInterface.displayReceiptFooter();
 
 }

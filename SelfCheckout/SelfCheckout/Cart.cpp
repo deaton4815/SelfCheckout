@@ -10,6 +10,14 @@ void Cart::addItem(const Item& item) {
 	calculateSubtotal();
 }
 
+void Cart::removeItem() {
+
+	m_scannedItems.pop_back();
+	--m_countScannedItems;
+
+	calculateSubtotal();
+}
+
 void Cart::resetCart() {
 
 	m_scannedItems.clear();
