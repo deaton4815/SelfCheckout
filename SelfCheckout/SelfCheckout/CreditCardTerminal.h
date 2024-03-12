@@ -1,3 +1,7 @@
+/*
+* Class processes credit and debit card payments.
+* Returns 5-digit confirmation code
+*/
 #pragma once
 
 #include <cstdlib>
@@ -13,10 +17,10 @@ private:
 
 	int m_confirmationCode{ 0 };
 
-	int authorizePayment();
-	int generateConfirmationCode();
+	int authorizePayment() const;
+	int generateConfirmationCode() const;
 
-	int getConfirmationCode();
+	int getConfirmationCode() const;
 	void setConfirmationCode(int);
 
 };

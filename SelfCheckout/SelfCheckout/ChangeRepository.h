@@ -1,3 +1,6 @@
+/*
+* Class serves as change repository for self checkout machine
+*/
 #pragma once
 
 #include "SCOControlCenter.h"
@@ -18,5 +21,5 @@ private:
 
 	void updateRepositoryAmount(float);
 	void addChange(float);
-	bool isChangeLow();
+	bool isChangeLow() const;
 };

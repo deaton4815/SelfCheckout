@@ -4,13 +4,6 @@
 
 using namespace std;
 
-/*
-Item::Item()
-	: m_productID{ "" }
-	, m_productDescription{ "" }
-	, m_unitPrice{ 0.f } {}
-	*/
-
 Item::Item(const string id, const string description, const float price)
 	: m_productID{ id }
 	, m_productDescription{ description }
@@ -18,8 +11,7 @@ Item::Item(const string id, const string description, const float price)
 
 Item::Item(const Item& src) = default;
 
+//Get item characteristics
 string Item::getProductID() const { return m_productID; }
-
 string Item::getProductDescription() const { return m_productDescription; }
-
 float Item::getUnitPrice() const { return m_unitPrice; }

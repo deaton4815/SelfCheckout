@@ -1,3 +1,7 @@
+/*
+* Control center for self checkout machines.
+*/
+
 #pragma once
 
 #include <iostream>
@@ -10,9 +14,9 @@ public:
 
 private:
 
-	void displayLowChangeMessage(float);
+	void displayLowChangeMessage(float) const;
 	float getMoreChange();
 
-	void displayTwoDecimalFloat(float);
+	void displayTwoDecimalFloat(float) const;
 
 };

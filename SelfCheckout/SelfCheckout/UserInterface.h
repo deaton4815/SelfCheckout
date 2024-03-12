@@ -11,7 +11,6 @@ class UserInterface
 
 public:
 
-	//UserInterface();
 	int getPortalSelection();
 
 	int getCustomerSelection();

@@ -1,3 +1,8 @@
+/*
+* Class is the engine for pricing and payments
+* Calculates grocery bill and executes payments through
+* the credit card terminal or cash and change repositories
+*/
 #pragma once
 
 #include "CreditCardTerminal.h"
@@ -6,7 +11,6 @@
 
 class PayService
 {
-
 public:
 
 	int payElectronic();
@@ -16,11 +20,11 @@ public:
 	float emptyCashPurchases();
 
 	void updatePrice(float);
-	float getSubtotal();
-	float getTax();
-	float getTotal();
-	float getAmountDue();
-	float getAmountPaid();
+	float getSubtotal() const;
+	float getTax() const;
+	float getTotal() const;
+	float getAmountDue() const;
+	float getAmountPaid() const;
 
 	void resetPayService();
 	
@@ -29,7 +33,6 @@ private:
 	CreditCardTerminal m_scoCreditCardTerminal;
 	CashRepository m_scoCashPurchase;
 	ChangeRepository m_scoChange;
-
 
 	float m_subtotal{ 0.f };
 	float m_tax{ 0.f };
@@ -41,8 +44,8 @@ private:
 
 	void addCashPurchase(float);
 
-	float calculateTax();
-	float calculateTotal();
+	float calculateTax() const;
+	float calculateTotal() const;
 
 	void setSubtotal(float);
 	void setTax(float);

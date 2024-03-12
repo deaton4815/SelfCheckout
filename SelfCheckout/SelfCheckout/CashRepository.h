@@ -1,3 +1,6 @@
+/*
+* Cash repository stores all cash deposited during purchases
+*/
 #pragma once
 class CashRepository
 {

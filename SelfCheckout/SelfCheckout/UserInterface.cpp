@@ -2,12 +2,6 @@
 
 using namespace std;
 
-/*
-UserInterface::UserInterface() {
-	displayOpeningMessage();
-}
-*/
-
 int UserInterface::getPortalSelection() {
 	displayOpeningMessage();
 	displayPortalPrompts();
