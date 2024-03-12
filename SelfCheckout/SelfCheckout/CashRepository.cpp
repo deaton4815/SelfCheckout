@@ -7,6 +7,7 @@ void CashRepository::depositCash(float cash) {
 float CashRepository::emptyRepository() {
 	float dispensedCash{ m_repositoryAmount };
 	resetPurchaseRepository();
+	return dispensedCash;
 }
 
 void CashRepository::resetPurchaseRepository() {

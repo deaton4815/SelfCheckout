@@ -16,16 +16,27 @@ private:
 	PayService m_scoPayService;
 	UserInterface m_scoUserInterface;
 
-	void executeCustomerCheckout();
+	void executeSCO();
+	
+	int getPortalSelection();
+	void executePortalSelection(int);
+	void executeCustomerSelection();
+	void executeEmployeeSelection();
+
 	void executeItemSelection();
 	void executePayment();
 
 	void scanItem(const int);
 	void updatePrice();
 	void displayCart();
+	void displayFullPrice();
 
 	void executeCardPayment();
 	void executeCashPayment();
+
+	void printCardReceipt(int);
+	void printCashReceipt();
+
 
 	void emptyCashPurchases();
 };

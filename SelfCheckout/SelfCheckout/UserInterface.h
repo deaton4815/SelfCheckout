@@ -12,14 +12,18 @@ class UserInterface
 public:
 
 	//UserInterface();
+	int getPortalSelection();
 
-	void displayOpeningMessage();
-
-	int getActionSelection();
+	int getCustomerSelection();
 	int getItemSelection();
 	int getPaymentOption();
 
+	int getEmployeeSelection();
+
 	float getCash(bool);
+
+	void displayReceiptHeader();
+	void displayReceiptFooter();
 
 	void displayCart(vector<unsigned int>, vector<string>,
 		vector<string>, vector<float>, float);
@@ -29,10 +33,16 @@ public:
 	void displayCardPayment(int, float, float);
 	void displayCashPayment(float, float, float);
 
+	void emptyCashPurchasesDisplay(float);
+
 private:
 
-	void displayActionPrompt();
-	void displayAvailableActions();
+	void displayOpeningMessage();
+	void displayPortalPrompts();
+
+	void displayCustomerPrompt();
+
+	void displayEmployeePrompt();
 	
 	void displayAvailableItems();
 
@@ -57,6 +67,8 @@ private:
 	void displayAmountPaid(float);
 	void displayAmountDue(float);
 	void displayChange(float);
+
+	void displayLine();
 
 	int getUserSelection();
 	void displayTwoDecimalFloat(float);

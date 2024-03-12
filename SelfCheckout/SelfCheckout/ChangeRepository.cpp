@@ -5,7 +5,6 @@ float ChangeRepository::getChange(float due, float paid) {
 	float changeDue = paid - due;
 	updateRepositoryAmount(changeDue);
 	checkChangeLevel();
-	std::cout << "\nDispensing change ..." << std::endl;
 	return changeDue;
 
 }
