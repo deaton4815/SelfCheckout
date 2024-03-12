@@ -12,13 +12,14 @@ class Cart
 {
 public:
 
-	void addItem(const Item&);
-
 	vector<unsigned int> getItemNumbers();
 	vector<string> getItemIDs();
 	vector<string> getItemDescriptions();
 	vector<float> getItemPrices();
 	float getSubtotal();
+
+	void addItem(const Item&);
+	void resetCart();
 
 private:
 

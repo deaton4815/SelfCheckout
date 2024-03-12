@@ -10,6 +10,14 @@ void Cart::addItem(const Item& item) {
 	calculateSubtotal();
 }
 
+void Cart::resetCart() {
+
+	m_scannedItems.clear();
+	m_countScannedItems = 0;
+	m_subtotal = 0.f;
+
+}
+
 vector<unsigned int> Cart::getItemNumbers() {
 	
 	vector<unsigned int> itemNumbers(m_countScannedItems);

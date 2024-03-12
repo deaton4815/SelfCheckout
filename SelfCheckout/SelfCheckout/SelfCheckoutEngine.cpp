@@ -10,6 +10,9 @@ void SelfCheckoutEngine::executeSCO() {
 	do {
 		portalSelection = getPortalSelection();
 		executePortalSelection(portalSelection);
+
+		m_scoScanner.resetCart();
+
 	} while (portalSelection != 0);
 }
 

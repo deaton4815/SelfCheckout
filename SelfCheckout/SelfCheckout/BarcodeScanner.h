@@ -19,6 +19,8 @@ public:
 	vector<float> getScannedItemPrices();
 	float getSubtotal();
 
+	void resetCart();
+
 private:
 
 	const Inventory m_itemInventory;

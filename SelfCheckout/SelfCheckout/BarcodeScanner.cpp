@@ -25,3 +25,5 @@ vector<float> BarcodeScanner::getScannedItemPrices() {
 float BarcodeScanner::getSubtotal() {
 	return m_scannedItems.getSubtotal();
 }
+
+void BarcodeScanner::resetCart() { m_scannedItems.resetCart(); }
