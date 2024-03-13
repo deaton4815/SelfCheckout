@@ -26,6 +26,9 @@ void CartInterface::displayCart (vector<unsigned int> itemNumbers,
 		displayItem(itemNumbers[i], itemIDs[i],
 			itemDescriptions[i], itemPrices[i]);
 	}
+
+	displayLine();
+
 }
 
 void CartInterface::displayCartHeader() const {
@@ -43,7 +46,7 @@ void CartInterface::displayItem(unsigned int number, string id,
 
 	displayColumn(number, m_sizeNumberHeader);
 	displayColumn(id, m_sizeIDHeader);
-	displayColumn(description, m_descriptionHeader); 
+	displayColumn(description, m_sizeDescriptionHeader); 
 	displayColumn(price);
 
 }

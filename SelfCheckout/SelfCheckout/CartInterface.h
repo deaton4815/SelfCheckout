@@ -45,4 +45,3 @@ private:
 	void displayLine() const;
 	void displayTwoDecimalFloat(float) const;
 };
-
