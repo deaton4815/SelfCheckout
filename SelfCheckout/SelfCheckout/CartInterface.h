@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iomanip>
 
 using namespace std;
 
@@ -31,17 +32,17 @@ private:
 	size_t m_sizeHeaderSpacer;
 
 	void displayCartHeader () const;
-
 	void displayItem (unsigned int, string,
 		string, float) const;
-	void displayNumber(unsigned int number);
-	void displayStringColumn(string);
-	void display
 
-	string getWhitespace(size_t, size_t);
+	void displayColumn(unsigned int, size_t) const;
+	void displayColumn(string, size_t) const;
+	void displayColumn(float) const;
 
-	size_t getDigitCount(unsigned int);
+	string getWhitespace(size_t, size_t) const;
+	size_t getDigitCount(unsigned int) const;
 
 	void displayLine() const;
+	void displayTwoDecimalFloat(float) const;
 };
 

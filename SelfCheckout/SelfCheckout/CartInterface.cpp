@@ -38,32 +38,43 @@ void CartInterface::displayCartHeader() const {
 	displayLine();
 } 
 
-void CartInterface::displayNumber(unsigned int number) {
+void CartInterface::displayItem(unsigned int number, string id,
+	string description, float price) const {
 
-	size_t sizeNumber{ getDigitCount(number) };
-	string spacer{ getWhitespace(m_sizeNumberHeader, sizeNumber) };
+	displayColumn(number, m_sizeNumberHeader);
+	displayColumn(id, m_sizeIDHeader);
+	displayColumn(description, m_descriptionHeader); 
+	displayColumn(price);
 
-	cout << number << spacer;
 }
 
-void CartInterface::displayStringcolumn(string header, string column) {
+void CartInterface::displayColumn(unsigned int column, size_t sizeHeader) const {
 
-	string spacer{ getWhitespace(m_sizeIDHeader, id.size()) };
-	cout << id << spacer;
+	size_t sizeColumn{ getDigitCount(column) };
+	string spacer{ getWhitespace(sizeHeader, sizeColumn) };
+
+	cout << column << spacer;
 }
 
-void CartInterface::displayDescription(string description) {
+void CartInterface::displayColumn(string column, size_t sizeHeader) const {
 
-	string spacer{ getWhitespace(m_sizeDescriptionHeader, description.size()) };
-	cout << description << spacer;
+	string spacer{ getWhitespace(sizeHeader, column.size()) };
+	cout << column << spacer;
 }
-string CartInterface::getWhitespace(size_t sizeHeader, size_t sizeEntry) {
+
+void CartInterface::displayColumn(float column) const {
+	cout << "$";
+	displayTwoDecimalFloat(column);
+	cout << endl;
+}
+
+string CartInterface::getWhitespace(size_t sizeHeader, size_t sizeEntry) const {
 	size_t sizeWhitespace{ sizeHeader + m_sizeHeaderSpacer - sizeEntry };
 	string whitespace(sizeWhitespace, ' ');
 	return whitespace;
 }
 
-size_t CartInterface::getDigitCount(unsigned int number) {
+size_t CartInterface::getDigitCount(unsigned int number) const {
 	size_t digitCount{ 0 };
 	while (number != 0) {
 		number = number / 10;
@@ -82,4 +93,8 @@ void CartInterface::displayLine() const {
 
 	string line(sizeTotal, '-');
 	cout << line << endl;
+}
+
+void CartInterface::displayTwoDecimalFloat(float value) const {
+	cout << fixed << setprecision(2) << value;
 }
