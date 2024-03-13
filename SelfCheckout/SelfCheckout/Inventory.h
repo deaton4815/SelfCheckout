@@ -1,3 +1,6 @@
+/*
+* Class stores Item object of all items available in the store
+*/
 #pragma once
 
 #include <string>
@@ -92,12 +95,6 @@ private:
 	const string m_milk01Description;
 	const float m_milk01Price;
 	const Item m_milk01;
-
-	//vector<string> m_itemIDsAll;
-	//string m_itemDescriptionsAll[12];
-	//string m_itemPricesAll[12];
-
-	//void setFullMenu();
 
 	ItemName getItemName(const int) const;
 	const Item identifyItem(ItemName) const;

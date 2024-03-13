@@ -4,6 +4,7 @@
 
 using namespace std;
 
+//Initializes all available item objects
 Inventory::Inventory()
 	: m_meat01ID("Meat01")
 	, m_meat01Description("T-Bone Steak")
@@ -64,62 +65,20 @@ Inventory::Inventory()
 	, m_milk01Description("Gallon Milk")
 	, m_milk01Price(4.00f)
 	, m_milk01(m_milk01ID, m_milk01Description, m_milk01Price)
-{
-	//setFullMenu();
-}
+{}
 
+//Returns item from user numerical input
 const Item Inventory::getItem(const int itemNumber) const {
 	const ItemName name{ getItemName(itemNumber) };
 	return identifyItem(name);
 }
 
-/*
-void Inventory::setFullMenu() {
-	m_itemIDsAll[0] = m_meat01ID;
-	m_itemIDsAll[1] = m_meat02ID;
-	m_itemIDsAll[2] = m_iceCream01ID;
-	m_itemIDsAll[3] = m_iceCream02ID;
-	m_itemIDsAll[4] = m_corn01ID;
-	m_itemIDsAll[5] = m_caseWaters01ID;
-	m_itemIDsAll[6] = m_potatoChips01ID;
-	m_itemIDsAll[7] = m_potatoChips02ID;
-	m_itemIDsAll[8] = m_donuts01ID;
-	m_itemIDsAll[9] = m_sausage01ID;
-	m_itemIDsAll[10] = m_eggs01ID;
-	m_itemIDsAll[11] = m_milk01ID;
-
-	m_itemDescriptionsAll[0] = m_meat01Description;
-	m_itemDescriptionsAll[1] = m_meat02Description;
-	m_itemDescriptionsAll[2] = m_iceCream01Description;
-	m_itemDescriptionsAll[3] = m_iceCream02Description;
-	m_itemDescriptionsAll[4] = m_corn01Description;
-	m_itemDescriptionsAll[5] = m_caseWaters01Description;
-	m_itemDescriptionsAll[6] = m_potatoChips01Description;
-	m_itemDescriptionsAll[7] = m_potatoChips02Description;
-	m_itemDescriptionsAll[8] = m_donuts01Description;
-	m_itemDescriptionsAll[9] = m_sausage01Description;
-	m_itemDescriptionsAll[10] = m_eggs01Description;
-	m_itemDescriptionsAll[11] = m_milk01Description;
-
-	m_itemPricesAll[0] = m_meat01Price;
-	m_itemPricesAll[1] = m_meat02Price;
-	m_itemPricesAll[2] = m_iceCream01Price;
-	m_itemPricesAll[3] = m_iceCream02Price;
-	m_itemPricesAll[4] = m_corn01Price;
-	m_itemPricesAll[5] = m_caseWaters01Price;
-	m_itemPricesAll[6] = m_potatoChips01Price;
-	m_itemPricesAll[7] = m_potatoChips02Price;
-	m_itemPricesAll[8] = m_donuts01Price;
-	m_itemPricesAll[9] = m_sausage01Price;
-	m_itemPricesAll[10] = m_eggs01Price;
-	m_itemPricesAll[11] = m_milk01Price;
-}
-*/
-
+//Converts inputed item number to ItemName type
 Inventory::ItemName Inventory::getItemName(const int itemNumber) const {
 	return static_cast<ItemName>(itemNumber);
 }
 
+//Returns Item object from user-inputed item number
 const Item Inventory::identifyItem(Inventory::ItemName name) const {
 	switch (name) {
 	case ItemName::Meat01:

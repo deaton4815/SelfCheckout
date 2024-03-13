@@ -1,5 +1,6 @@
 #include "CreditCardTerminal.h"
 
+//Executes payment authorization process
 int CreditCardTerminal::makePayment() {
 
 	setConfirmationCode(authorizePayment());
@@ -7,11 +8,12 @@ int CreditCardTerminal::makePayment() {
 	return m_confirmationCode;
 }
 
-int CreditCardTerminal::authorizePayment() {
+//Authorizes payment and returns 5-digit confirmation code
+int CreditCardTerminal::authorizePayment() const {
 
 	int confirmationCode{ 0 };
 
-	bool paymentAuthorized{ 1 };
+	bool paymentAuthorized{ 1 };//Hardcoded based on assumption that card payment is successful
 	if (paymentAuthorized) {
 		confirmationCode = generateConfirmationCode();
 	}
@@ -21,7 +23,8 @@ int CreditCardTerminal::authorizePayment() {
 	return confirmationCode;
 }
 
-int CreditCardTerminal::generateConfirmationCode() {
+//Generates random 5-digit confirmation code
+int CreditCardTerminal::generateConfirmationCode() const {
 	int lowerBound{ 10000 };
 	int upperBound{ 99999 };
 
@@ -30,5 +33,5 @@ int CreditCardTerminal::generateConfirmationCode() {
 	return confirmationCode;
 }
 
-int CreditCardTerminal::getConfirmationCode() { return m_confirmationCode; }
+int CreditCardTerminal::getConfirmationCode() const { return m_confirmationCode; }
 void CreditCardTerminal::setConfirmationCode(int code) { m_confirmationCode = code; }

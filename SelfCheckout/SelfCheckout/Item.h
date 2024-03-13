@@ -1,3 +1,7 @@
+/*
+Class holds information of an individual item
+*/
+
 #pragma once
 
 #include <string>
@@ -9,7 +13,6 @@ class Item
 
 public:
 
-	//Item();
 	Item(const string, const string, const float);
 
 	Item(const Item&);
