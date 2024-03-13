@@ -4,18 +4,21 @@ SelfCheckoutEngine::SelfCheckoutEngine() {
 	executeSCO();
 }
 
+//Drives self checkout process
 void SelfCheckoutEngine::executeSCO() {
 
 	int portalSelection{ 0 };
 	do {
-		portalSelection = getPortalSelection();
-		executePortalSelection(portalSelection);
+		portalSelection = getPortalSelection();//First selection screen.
+		executePortalSelection(portalSelection);//Executes either customer or employee portal
 
 		m_scoScanner.resetCart();
 
+		//Loops back to main selection screen until a zero is entered to terminate the program
 	} while (portalSelection != 0);
 }
 
+// 
 int SelfCheckoutEngine::getPortalSelection() {
 	int portalSelection{ 0 };
 	do {

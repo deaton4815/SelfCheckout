@@ -1,3 +1,6 @@
+/*
+* Class is the main engine of the self checkout machine
+*/
 #pragma once
 
 #include "BarcodeScanner.h"
