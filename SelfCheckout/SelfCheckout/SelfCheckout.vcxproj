@@ -129,27 +129,43 @@
   <ItemGroup>
     <ClInclude Include="BarcodeScanner.h" />
     <ClInclude Include="Cart.h" />
+    <ClInclude Include="CartInterface.h" />
     <ClInclude Include="CashRepository.h" />
     <ClInclude Include="ChangeRepository.h" />
     <ClInclude Include="CreditCardTerminal.h" />
+    <ClInclude Include="CustomerMenu.h" />
+    <ClInclude Include="EmployeeMenu.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemMenu.h" />
+    <ClInclude Include="PaymentInterface.h" />
+    <ClInclude Include="PaymentMenu.h" />
     <ClInclude Include="PayService.h" />
+    <ClInclude Include="PortalMenu.h" />
     <ClInclude Include="SCOControlCenter.h" />
+    <ClInclude Include="SelectionMenu.h" />
     <ClInclude Include="SelfCheckoutEngine.h" />
     <ClInclude Include="UserInterface.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BarcodeScanner.cpp" />
     <ClCompile Include="Cart.cpp" />
+    <ClCompile Include="CartInterface.cpp" />
     <ClCompile Include="CashRepository.cpp" />
     <ClCompile Include="ChangeRepository.cpp" />
     <ClCompile Include="CreditCardTerminal.cpp" />
+    <ClCompile Include="CustomerMenu.cpp" />
+    <ClCompile Include="EmployeeMenu.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="InventoryTest.cpp" />
+    <ClCompile Include="ItemMenu.cpp" />
+    <ClCompile Include="PaymentInterface.cpp" />
+    <ClCompile Include="PaymentMenu.cpp" />
     <ClCompile Include="PayService.cpp" />
+    <ClCompile Include="PortalMenu.cpp" />
     <ClCompile Include="SCOControlCenter.cpp" />
+    <ClCompile Include="SelectionMenu.cpp" />
     <ClCompile Include="SelfCheckoutEngine.cpp" />
     <ClCompile Include="UserInterface.cpp" />
   </ItemGroup>
