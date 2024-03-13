@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//Adds item to scanned items cart
 void Cart::addItem(const Item& item) {
 
 	m_scannedItems.push_back(item);
@@ -10,7 +11,26 @@ void Cart::addItem(const Item& item) {
 	calculateSubtotal();
 }
 
-vector<unsigned int> Cart::getItemNumbers() {
+//Removes the most recent item from scanned items cart
+void Cart::removeItem() {
+
+	m_scannedItems.pop_back();
+	--m_countScannedItems;
+
+	calculateSubtotal();
+}
+
+//Empties the cart
+void Cart::resetCart() {
+
+	m_scannedItems.clear();
+	m_countScannedItems = 0;
+	m_subtotal = 0.f;
+
+}
+
+//Returns a vector containing the order that each item was scanned
+vector<unsigned int> Cart::getItemNumbers() const {
 	
 	vector<unsigned int> itemNumbers(m_countScannedItems);
 
@@ -19,7 +39,10 @@ vector<unsigned int> Cart::getItemNumbers() {
 	}
 	return itemNumbers;
 }
-vector<string> Cart::getItemIDs() {
+
+//Returns a vector containing the item IDs of all scanned items
+//	in the order that the items were scanned
+vector<string> Cart::getItemIDs() const {
 
 	vector<string> itemIDs(m_countScannedItems);
 
@@ -29,7 +52,9 @@ vector<string> Cart::getItemIDs() {
 	return itemIDs;
 }
 
-vector<string> Cart::getItemDescriptions() {
+//Returns a vector containing the item descriptions of all scanned items
+//	in the order that the items were scanned
+vector<string> Cart::getItemDescriptions() const {
 
 	vector<string> itemDescriptions(m_countScannedItems);
 
@@ -39,7 +64,9 @@ vector<string> Cart::getItemDescriptions() {
 	return itemDescriptions;
 }
 
-vector<float> Cart::getItemPrices() {
+//Returns a vector containing the item prices of all scanned items
+//	in the order that the items were scanned
+vector<float> Cart::getItemPrices() const {
 
 	vector<float> itemPrices(m_countScannedItems);
 
@@ -49,8 +76,9 @@ vector<float> Cart::getItemPrices() {
 	return itemPrices;
 }
 
-float Cart::getSubtotal() { return m_subtotal; }
+float Cart::getSubtotal() const { return m_subtotal; }
 
+//Calculates added price of all scanned items
 void Cart::calculateSubtotal() {
 
 	vector<float> itemPrices = getItemPrices();

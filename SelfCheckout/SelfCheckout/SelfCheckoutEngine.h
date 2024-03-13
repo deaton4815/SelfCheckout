@@ -1,3 +1,6 @@
+/*
+* Class is the main engine of the self checkout machine
+*/
 #pragma once
 
 #include "BarcodeScanner.h"
@@ -11,33 +14,31 @@ public:
 	SelfCheckoutEngine();
 
 private:
-	//unsigned int getUserSelection();
-	//void executeUserSelection();
+
 	BarcodeScanner m_scoScanner;
 	PayService m_scoPayService;
 	UserInterface m_scoUserInterface;
 
-	/*
-	vector<unsigned int> m_itemNumbers;
-	vector<string> m_itemIDs;
-	vector<string> m_itemDescriptions;
-	vector<float> m_itemPrices;
+	void executeSCO();
+	
+	int getPortalSelection();
+	void executePortalSelection(int);
+	void executeCustomerSelection();
+	void executeEmployeeSelection();
 
-	float m_subtotal{ 0.f };
-	float m_tax{ 0.f };
-	float m_total{ 0.f };
-	*/
-
-	void executeCustomerCheckout();
 	void executeItemSelection();
-	void scanItem(const int);
-	void updatePrice();
+	void executeItemRemoval();
+	void executePayment();
+
 	void displayCart();
+	void displayFullPrice();
 
-	/*
-	void updateCartInfo();
+	void executeCardPayment();
+	void executeCashPayment();
 
-	void updatePrice();
-	void updateSubtotal();
-	*/
+	void printCardReceipt(int);
+	void printCashReceipt(float);
+
+
+	void emptyCashPurchases();
 };

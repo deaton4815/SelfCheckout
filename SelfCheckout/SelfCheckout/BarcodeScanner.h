@@ -1,3 +1,9 @@
+/*
+* Class acts as the barcode scanner, acting as the engine for the inventory and cart.
+* Functionality includes adding appropriate items to the cart from the inventory
+* and retrieving information from the cart.
+*/
+
 #pragma once
 
 # include <string>
@@ -12,12 +18,15 @@ class BarcodeScanner
 public:
 
 	void scanItem(const int itemNumber);
+	void removeItem();
 
-	vector<unsigned int> getScannedItemNumbers();
-	vector<string> getScannedItemIDs();
-	vector<string> getScannedItemDescriptions();
-	vector<float> getScannedItemPrices();
-	float getSubtotal();
+	vector<unsigned int> getScannedItemNumbers() const;
+	vector<string> getScannedItemIDs() const;
+	vector<string> getScannedItemDescriptions() const;
+	vector<float> getScannedItemPrices() const;
+	float getSubtotal() const;
+
+	void resetCart();
 
 private:
 

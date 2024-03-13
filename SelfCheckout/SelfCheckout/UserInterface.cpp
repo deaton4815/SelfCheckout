@@ -2,20 +2,21 @@
 
 using namespace std;
 
-/*
-UserInterface::UserInterface() {
+int UserInterface::getPortalSelection() {
 	displayOpeningMessage();
-}
-*/
-
-void UserInterface::displayOpeningMessage() {
-	cout << "Hello and welcome to self-checkout!" << endl << endl;
+	displayPortalPrompts();
+	int selection{ getUserSelection() };
+	return selection;
 }
 
-int UserInterface::getActionSelection() {
+int UserInterface::getCustomerSelection() {
+	displayCustomerPrompt();
+	int selection{ getUserSelection() };
+	return selection;
+}
 
-	displayActionPrompt();
-	displayAvailableActions();
+int UserInterface::getEmployeeSelection() {
+	displayEmployeePrompt();
 	int selection{ getUserSelection() };
 	return selection;
 }
@@ -26,9 +27,34 @@ int UserInterface::getItemSelection() {
 	return selection;
 }
 
+int UserInterface::getPaymentOption() {
+	displayPaymentOptions();
+	int selection{ getUserSelection() };
+	return selection;
+}
+
+float UserInterface::getCash(bool isFirst) {
+
+	float cash{ 0.f };
+
+	displayCashPaymentPrompt(isFirst);
+	cin >> cash;
+	return cash;
+}
+
+void UserInterface::displayReceiptHeader() {
+	displayLine();
+	cout << "Please take your receipt:" << endl;
+	displayLine();
+}
+
+void UserInterface::displayReceiptFooter() {
+	displayLine();
+}
+
 void UserInterface::displayCart(vector<unsigned int> itemNumbers,
 	vector<string> itemIDs, vector<string> itemDescriptions,
-	vector<float> itemPrices, float subtotal, float tax, float total) {
+	vector<float> itemPrices, float subtotal) {
 
 	displayCartHeader();
 	
@@ -38,23 +64,70 @@ void UserInterface::displayCart(vector<unsigned int> itemNumbers,
 			itemDescriptions[i], itemPrices[i]);
 	}
 
-	displayPrice(subtotal, tax, total);
+	displaySubtotal(subtotal);
 }
 
-void UserInterface::displayActionPrompt() {
-	cout << "Please choose one of the following options.\n";
-	cout << "Enter the number that corresponds with your selection." << endl;
+void UserInterface::displayFullPrice(float subtotal, float tax, float total) {
+	cout << "\nAmount due:";
+	displaySubtotal(subtotal);
+	displayTax(tax);
+	displayTotal(total);
 }
 
-void UserInterface::displayAvailableActions() {
-	cout << "1 - Scan new item." << endl;
-	
-	cout << "0 - Terminate Program." << endl;
+void UserInterface::displayCardPayment(int code, float paid, float due) {
+
+	displayCardConfirmation(code);
+	displayAmountPaid(paid);
+	displayAmountDue(due);
+
+}
+
+void UserInterface::displayCashPayment(float paid, float due, float change) {
+
+	displayAmountPaid(paid);
+	displayAmountDue(due);
+	displayChange(change);
+
+}
+
+void UserInterface::displayOpeningMessage() {
+	cout << "Hello and welcome to self-checkout!" << endl;
+}
+
+void UserInterface::displayPortalPrompts() {
+	cout << "\nPlease select one of the following:" << endl;
+	cout << "1 - Customer Portal" << endl;
+	cout << "2 - Employee Portal" << endl;
+
+	cout << "\n0 - Terminate Program" << endl;
+
+	cout << "\nEnter selection number: ";
+}
+
+void UserInterface::displayCustomerPrompt() {
+	cout << "\nPlease choose one of the following options:\n";
+
+	cout << "\n1 - Scan new item" << endl;
+	cout << "2 - Remove previous item selection" << endl;
+	cout << "3 - Pay" << endl;
+
+	cout << "\n0 - Return" << endl;
+
+	cout << "\nEnter selection number: ";
+}
+
+void UserInterface::displayEmployeePrompt() {
+	cout << "\nPlease choose one of the following options:\n";
+
+	cout << "\n1 - Empty cash purchase repository" << endl;
+
+	cout << "\n0 - Return." << endl;
+
+	cout << "\nEnter selection number: ";
 }
 
 void UserInterface::displayAvailableItems() {
-	cout << "Available Items:" << endl;
-	cout << "Enter the number that corresponds with your selection." << endl;
+	cout << "\n\nAvailable Items:" << endl;
 	cout << "1 - Meat01" << endl;
 	cout << "2 - Meat02" << endl;
 	cout << "3 - Icecream01" << endl;
@@ -67,6 +140,8 @@ void UserInterface::displayAvailableItems() {
 	cout << "10 - Sausage01" << endl;
 	cout << "11 - Eggs01" << endl;
 	cout << "12 - Milk01" << endl;
+
+	cout << "\nEnter item number: ";
 }
 
 void UserInterface::displayItem(unsigned int number, string id,
@@ -78,11 +153,11 @@ void UserInterface::displayItem(unsigned int number, string id,
 }
 
 void UserInterface::displayCartHeader() {
-	cout << "Item # | Product ID    | Product Description";
-	cout << "                 | Unit Cost" << endl;
-	cout << "--------------------------------------------";
-	cout << "----------------------------" << endl;
-} 
+	cout << "\nItem # | Product ID    | Product Description";
+	cout << "                 | Unit Cost";
+	displayLine();
+}
+
 
 void UserInterface::displayItemNumber(unsigned int number) {
 	cout << number;
@@ -99,7 +174,7 @@ void UserInterface::displayItemNumber(unsigned int number) {
 void UserInterface::displayProductID(string id) {
 	cout << " " << id;
 
-	int remainingWhitespace = 14 - id.length();
+	size_t remainingWhitespace = 14 - id.length();
 	switch (remainingWhitespace) {
 	case 1:
 		cout << " ";
@@ -127,7 +202,7 @@ void UserInterface::displayProductID(string id) {
 void UserInterface::displayProductDescription(string description) {
 	cout << " " << description;
 
-	int remainingWhitespace = 36 - description.length();
+	size_t remainingWhitespace = 36 - description.length();
 	switch (remainingWhitespace) {
 	case 1:
 		cout << " ";
@@ -175,18 +250,80 @@ void UserInterface::displayUnitCost(float price) {
 	cout << endl;
 }
 
-void UserInterface::displayPrice(float subtotal, float tax, float total) {
+void UserInterface::displaySubtotal(float subtotal) {
 	cout << "\nSubtotal: $";
 	displayTwoDecimalFloat(subtotal);
 	cout << endl;
+	}
 
+void UserInterface::displayTax(float tax) {
 	cout << "Tax:      $";
 	displayTwoDecimalFloat(tax);
 	cout << endl;
+}
 
+void UserInterface::displayTotal(float total) {
 	cout << "Total:    $";
 	displayTwoDecimalFloat(total);
 	cout << endl;
+}
+
+void UserInterface::displayPaymentOptions() {
+	cout << "\nPayment options:" << endl;
+	cout << "1 - Credit or debit" << endl;
+	cout << "2 - Cash payment" << endl;
+
+	cout << "\n0 - Return" << endl;
+	cout << "\nEnter selection number: ";
+}
+
+void UserInterface::displayCardConfirmation(int code) {
+	cout << "Confirmation Code: " << code << endl;
+}
+
+void UserInterface::displayCashPaymentPrompt(bool isFirst) {
+	if (isFirst) {
+		cout << "\nPlease input cash amount entered: $";
+	}
+	else {
+		cout << "\nNot enough! Please enter more cash: $";
+	}
+}
+
+void UserInterface::displayAmountPaid(float paid) {
+	cout << "\nAmount paid: $";
+	displayTwoDecimalFloat(paid);
+	cout << endl;
+}
+
+void UserInterface::displayAmountDue(float due) {
+	cout << "Remaining due: $";
+	displayTwoDecimalFloat(due);
+	cout << endl;
+}
+
+void UserInterface::displayChange(float change) {
+	cout << "Change dispensed: $";
+	displayTwoDecimalFloat(change);
+	cout << endl;
+}
+
+void UserInterface::emptyCashPurchasesDisplay(float cash) {
+	cout << "\nEmptying cash repository...Checkout Service Paused." << endl;
+	cout << "Cash dispensed: $";
+	displayTwoDecimalFloat(cash);
+	cout << endl;
+
+	int startButton{ 0 };
+	do {
+		cout << "\nEnter 1 to resume service:";
+		cin >> startButton;
+	} while (startButton != 1);
+}
+
+void UserInterface::displayLine() {
+	cout << "\n--------------------------------------------";
+	cout << "----------------------------" << endl;
 }
 
 int UserInterface::getUserSelection() {

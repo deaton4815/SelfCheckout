@@ -11,20 +11,37 @@ class UserInterface
 
 public:
 
-	//UserInterface();
+	int getPortalSelection();
 
-	void displayOpeningMessage();
-
-	int getActionSelection();
+	int getCustomerSelection();
 	int getItemSelection();
+	int getPaymentOption();
+
+	int getEmployeeSelection();
+
+	float getCash(bool);
+
+	void displayReceiptHeader();
+	void displayReceiptFooter();
 
 	void displayCart(vector<unsigned int>, vector<string>,
-		vector<string>, vector<float>, float, float, float);
+		vector<string>, vector<float>, float);
+
+	void displayFullPrice(float, float, float);
+
+	void displayCardPayment(int, float, float);
+	void displayCashPayment(float, float, float);
+
+	void emptyCashPurchasesDisplay(float);
 
 private:
 
-	void displayActionPrompt();
-	void displayAvailableActions();
+	void displayOpeningMessage();
+	void displayPortalPrompts();
+
+	void displayCustomerPrompt();
+
+	void displayEmployeePrompt();
 	
 	void displayAvailableItems();
 
@@ -36,10 +53,23 @@ private:
 	void displayProductDescription(string);
 	void displayUnitCost(float);
 
-	void displayPrice(float, float, float);
+	void displaySubtotal(float);
+	void displayTax(float);
+	void displayTotal(float);
+
+	void displayPaymentOptions();
+
+	void displayCardConfirmation(int);
+
+	void displayCashPaymentPrompt(bool);
+
+	void displayAmountPaid(float);
+	void displayAmountDue(float);
+	void displayChange(float);
+
+	void displayLine();
 
 	int getUserSelection();
-
 	void displayTwoDecimalFloat(float);
 
 };
