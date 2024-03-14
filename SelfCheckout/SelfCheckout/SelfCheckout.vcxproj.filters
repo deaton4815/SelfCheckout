@@ -24,16 +24,7 @@
     <ClInclude Include="BarcodeScanner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CardInterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Cart.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CartInterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CashInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CashRepository.h">
@@ -52,9 +43,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ItemMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PaymentInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PaymentMenu.h">
@@ -78,10 +66,19 @@
     <ClInclude Include="UserInterface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CashRepositoryInterface.h">
+    <ClInclude Include="CardIO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CustomerPortal.h">
+    <ClInclude Include="CartIO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CashIO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CashRepositoryIO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PaymentIO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -92,22 +89,10 @@
     <ClCompile Include="Inventory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InventoryTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="BarcodeScanner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CardInterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Cart.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CartInterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CashInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CashRepository.cpp">
@@ -126,9 +111,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ItemMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PaymentInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PaymentMenu.cpp">
@@ -152,10 +134,22 @@
     <ClCompile Include="UserInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CashRepositoryInterface.cpp">
+    <ClCompile Include="CardIO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CustomerPortal.cpp">
+    <ClCompile Include="CartIO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CashIO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CashRepositoryIO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00_SelfCheckout_Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PaymentIO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -40,7 +40,7 @@ void PaymentIO::printReceipt(const vector<unsigned int>& numbers,
 	displayCart(numbers, ids, descriptions, prices);
 	displayFullPrice(subtotal, tax, total);
 	cout << endl;
-	displayPayment(due, paid, change);
+	displayPayment(due - paid, paid, change);
 	m_cart.displayLine();
 	cout << endl;
 }

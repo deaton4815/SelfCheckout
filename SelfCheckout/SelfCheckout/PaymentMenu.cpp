@@ -7,7 +7,6 @@ void PaymentMenu::displayMenuHeader() const {
 }
 
 void PaymentMenu::displayMenuOptions() const {
-	cout << "\nPayment options:" << endl;
 	cout << "1 - Credit or debit" << endl;
 	cout << "2 - Cash payment" << endl;
 
