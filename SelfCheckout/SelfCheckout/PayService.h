@@ -15,7 +15,7 @@ public:
 
 	int payElectronic();
 
-	bool payCash(float);
+	float payCash(float);
 	float getChange();
 	float emptyCashPurchases();
 

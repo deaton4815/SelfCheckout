@@ -17,7 +17,7 @@ int PayService::payElectronic() {
 }
 
 //Executes cash payment
-bool PayService::payCash(float cashPayment) {
+float PayService::payCash(float cashPayment) {
 	setAmountDue(m_total);
 
 	//Cash payment is kept cumulatively in case more
@@ -26,17 +26,12 @@ bool PayService::payCash(float cashPayment) {
 	addCashPurchase(cashPayment);//Adds to cash repository
 
 	//Funciton returns whether enough cash was deposited
-	bool isEnough{ false };
-	if (m_amountPaid > m_amountDue) {
-		isEnough = true;
-	}
-	return isEnough;
+	return getChange();
 }
 
 //Gets change from change repository
 float PayService::getChange() {
-	float change{ m_scoChange.getChange(m_amountDue, m_amountPaid) };
-	return change;
+	return m_scoChange.getChange(m_amountDue, m_amountPaid);
 }
 
 //Empties cash repository

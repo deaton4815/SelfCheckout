@@ -325,7 +325,6 @@ void UserInterface::displayLine() {
 	cout << "\n--------------------------------------------";
 	cout << "----------------------------" << endl;
 }
-
 int UserInterface::getUserSelection() {
 	int selection{ 0 };
 	cin >> selection;

@@ -134,15 +134,10 @@ void SelfCheckoutEngine::executeCardPayment() {
 
 void SelfCheckoutEngine::executeCashPayment() {
 
-	bool isEnough{ false };
-	bool isFirst{ true };
-	do {
-		isEnough = m_scoPayService.payCash(m_scoUserInterface.getCash(isFirst));
-		isFirst = false;
-	} while (!isEnough);
-
-	float change{ m_scoPayService.getChange() };
-
+	float change{ m_scoPayService.payCash(m_scoUserInterface.getCash()) };
+	while (change < 0.f) {
+		change = m_scoPayService.payCash(m_scoUserInterface.getCash(change));
+	}
 	printCashReceipt(change);
 }
 
