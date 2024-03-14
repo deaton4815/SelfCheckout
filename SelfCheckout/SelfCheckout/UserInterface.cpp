@@ -11,7 +11,7 @@ void UserInterface::displayCart(const vector<unsigned int>& itemNumbers,
 	const vector<string>& itemIDs, const vector<string>& itemDescriptions,
 	const vector<float>& itemPrices, const float subtotal) const {
 
-	m_cart.displayCart(itemNumbers, itemIDs, itemDescriptions, itemPrices);
+	m_payment.displayCart(itemNumbers, itemIDs, itemDescriptions, itemPrices);
 	m_payment.displaySubtotal(subtotal);
 }
 

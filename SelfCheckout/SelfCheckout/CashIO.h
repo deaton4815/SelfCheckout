@@ -6,7 +6,7 @@
 #include <iostream>
 #include <iomanip>
 
-class CashInterface
+class CashIO
 {
 
 public:

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-class CardInterface
+class CardIO
 {
 public:
 	void displayCardConfirmation(const int) const;
