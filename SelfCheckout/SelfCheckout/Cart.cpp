@@ -3,21 +3,21 @@
 using namespace std;
 
 //Adds item to scanned items cart
-void Cart::addItem(const Item& item) {
+void Cart::operator+=(Item newItem) {
+	this->m_scannedItems.push_back(newItem);
+	++this->m_countScannedItems;
 
-	m_scannedItems.push_back(item);
-	++m_countScannedItems;
-
-	calculateSubtotal();
+	this->calculateSubtotal();
 }
 
 //Removes the most recent item from scanned items cart
-void Cart::removeItem() {
-
-	m_scannedItems.pop_back();
-	--m_countScannedItems;
-
-	calculateSubtotal();
+void Cart::operator-=(int n) {
+	n = 1;
+	for (int i{ 0 }; i < n; i++) {
+		this->m_scannedItems.pop_back();
+	}
+	--this->m_countScannedItems;
+	this->calculateSubtotal();
 }
 
 //Empties the cart
