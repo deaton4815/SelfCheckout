@@ -164,7 +164,7 @@
     <ClCompile Include="EmployeeMenu.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
-    <ClCompile Include="InventoryTest.cpp" />
+    <ClCompile Include="SelfCheckoutMain.cpp" />
     <ClCompile Include="ItemMenu.cpp" />
     <ClCompile Include="PaymentIO.cpp" />
     <ClCompile Include="PaymentMenu.cpp" />
