@@ -4,9 +4,9 @@
 #pragma once
 
 #include "PaymentMenu.h"
-#include "CartInterface.h"
-#include "CardInterface.h"
-#include "CashInterface.h"
+#include "CartIO.h"
+#include "CardIO.h"
+#include "CashIO.h"
 
 #include <iostream>
 #include <vector>
@@ -14,12 +14,15 @@
 
 using namespace std;
 
-class PaymentInterface
+class PaymentIO
 {
 
 public:
 
 	int getPaymentSelection(const float, const float, const float);
+
+	void displayCart(const vector<unsigned int>&, const vector<string>&,
+		const vector<string>&, const vector<float>&) const;
 
 	void printReceipt(const vector<unsigned int>&, const vector<string>&,
 		const vector<string>&, const vector<float>&,
@@ -40,9 +43,9 @@ public:
 private:
 
 	PaymentMenu m_paymentType;
-	CartInterface m_cart;
-	const CardInterface m_card;
-	const CashInterface m_cash;
+	CartIO m_cart;
+	const CardIO m_card;
+	const CashIO m_cash;
 
 	void printReceiptHeader() const;
 

@@ -1,3 +1,7 @@
+/*
+* Class executes all IO interactions of self checkout terminal
+*/
+
 #pragma once
 
 #include <iostream>
@@ -9,9 +13,8 @@
 #include "EmployeeMenu.h"
 #include "ItemMenu.h"
 
-#include "CartInterface.h"
-#include "PaymentInterface.h"
-#include "CashRepositoryInterface.h"
+#include "PaymentIO.h"
+#include "CashRepositoryIO.h"
 
 using namespace std;
 
@@ -50,7 +53,6 @@ private:
 	EmployeeMenu m_employeePortal;
 	ItemMenu m_availableItems;
 
-	CartInterface m_cart;
-	PaymentInterface m_payment;
-	CashRepositoryInterface m_cashPurchases;
+	PaymentIO m_payment;
+	CashRepositoryIO m_cashPurchases;
 };

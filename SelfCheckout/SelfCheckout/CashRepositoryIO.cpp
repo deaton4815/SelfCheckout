@@ -1,8 +1,8 @@
-#include "CashRepositoryInterface.h"
+#include "CashRepositoryIO.h"
 
 using namespace std;
 
-void CashRepositoryInterface::emptyCashPurchasesDisplay(const float cash) const {
+void CashRepositoryIO::emptyCashPurchasesDisplay(const float cash) const {
 	cout << "\nEmptying cash repository...Checkout Service Paused." << endl;
 	cout << "Cash dispensed: $";
 	displayTwoDecimalFloat(cash);
@@ -15,6 +15,6 @@ void CashRepositoryInterface::emptyCashPurchasesDisplay(const float cash) const 
 	} while (startButton != 1);
 }
 
-void CashRepositoryInterface::displayTwoDecimalFloat(const float value) const {
+void CashRepositoryIO::displayTwoDecimalFloat(const float value) const {
 	cout << fixed << setprecision(2) << value;
 }

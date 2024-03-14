@@ -3,7 +3,7 @@
 #include <iostream>
 #include <iomanip>
 
-class CashRepositoryInterface
+class CashRepositoryIO
 {
 public:
 	void emptyCashPurchasesDisplay(const float) const;
@@ -11,4 +11,3 @@ public:
 private:
 	void displayTwoDecimalFloat(const float) const;
 };
-

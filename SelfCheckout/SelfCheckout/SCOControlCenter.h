@@ -1,5 +1,6 @@
 /*
 * Control center for self checkout machines.
+* Has own IO since it is a separate machine
 */
 
 #pragma once

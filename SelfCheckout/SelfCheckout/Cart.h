@@ -15,8 +15,8 @@ class Cart
 {
 public:
 
-	void addItem(const Item&);
-	void removeItem();
+	void operator+= (Item);
+	void operator-= (int);
 	void resetCart();
 
 	vector<unsigned int> getItemNumbers() const;

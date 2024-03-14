@@ -4,12 +4,13 @@ using namespace std;
 
 //Add item to cart form inventory
 void BarcodeScanner::scanItem(const int itemNumber) {
-	m_scannedItems.addItem(m_itemInventory.getItem(itemNumber));
+	//m_scannedItems.addItem(m_itemInventory.getItem(itemNumber));
+	m_scannedItems += m_itemInventory.getItem(itemNumber);
 }
 
 //Removes item most recently added to cart
 void BarcodeScanner::removeItem() {
-	m_scannedItems.removeItem();
+	m_scannedItems -= 1;
 }
 
 //Public getters of information in cart

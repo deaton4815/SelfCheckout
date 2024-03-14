@@ -25,6 +25,7 @@ float SCOControlCenter::getMoreChange() {
 	cout << "Enter more change to continue service." << endl;
 	cout << "Amount Entered: $";
 	cin >> addedChange;
+	cout << "\n\n----------------------------------------------------------";
 	return addedChange;
 }
 
