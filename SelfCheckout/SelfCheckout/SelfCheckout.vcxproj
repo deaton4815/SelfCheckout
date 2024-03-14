@@ -128,29 +128,53 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BarcodeScanner.h" />
+    <ClInclude Include="CardInterface.h" />
     <ClInclude Include="Cart.h" />
+    <ClInclude Include="CartInterface.h" />
+    <ClInclude Include="CashInterface.h" />
     <ClInclude Include="CashRepository.h" />
+    <ClInclude Include="CashRepositoryInterface.h" />
     <ClInclude Include="ChangeRepository.h" />
     <ClInclude Include="CreditCardTerminal.h" />
+    <ClInclude Include="CustomerMenu.h" />
+    <ClInclude Include="CustomerPortal.h" />
+    <ClInclude Include="EmployeeMenu.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemMenu.h" />
+    <ClInclude Include="PaymentInterface.h" />
+    <ClInclude Include="PaymentMenu.h" />
     <ClInclude Include="PayService.h" />
+    <ClInclude Include="PortalMenu.h" />
     <ClInclude Include="SCOControlCenter.h" />
-    <ClInclude Include="SelfCheckoutEngine.h" />
+    <ClInclude Include="SelectionMenu.h" />
+    <ClInclude Include="SelfCheckoutMachine.h" />
     <ClInclude Include="UserInterface.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BarcodeScanner.cpp" />
+    <ClCompile Include="CardInterface.cpp" />
     <ClCompile Include="Cart.cpp" />
+    <ClCompile Include="CartInterface.cpp" />
+    <ClCompile Include="CashInterface.cpp" />
     <ClCompile Include="CashRepository.cpp" />
+    <ClCompile Include="CashRepositoryInterface.cpp" />
     <ClCompile Include="ChangeRepository.cpp" />
     <ClCompile Include="CreditCardTerminal.cpp" />
+    <ClCompile Include="CustomerMenu.cpp" />
+    <ClCompile Include="CustomerPortal.cpp" />
+    <ClCompile Include="EmployeeMenu.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="InventoryTest.cpp" />
+    <ClCompile Include="ItemMenu.cpp" />
+    <ClCompile Include="PaymentInterface.cpp" />
+    <ClCompile Include="PaymentMenu.cpp" />
     <ClCompile Include="PayService.cpp" />
+    <ClCompile Include="PortalMenu.cpp" />
     <ClCompile Include="SCOControlCenter.cpp" />
-    <ClCompile Include="SelfCheckoutEngine.cpp" />
+    <ClCompile Include="SelectionMenu.cpp" />
+    <ClCompile Include="SelfCheckoutMachine.cpp" />
     <ClCompile Include="UserInterface.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
