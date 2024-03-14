@@ -66,7 +66,7 @@ void PaymentInterface::displayTotal(float total) const { displayValue("Total:   
 void PaymentInterface::displayDue(float due) const { displayValue("Due:      $", due); }
 void PaymentInterface::displayPaid(float paid) const { displayValue("Paid:     $", paid); }
 void PaymentInterface::displayCode(int code) const { displayValue("Confirmation code: ", code); }
-void PaymentInterface::displayChange(float change) const { displayValue("Change:   $", change); }
+void PaymentInterface::displayChange(float change) const { displayValue("Change dispensed: $", change); }
 
 void PaymentInterface::displayValue(const string& caption, float value) const {
 	cout << caption;

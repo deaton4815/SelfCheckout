@@ -1,14 +1,21 @@
 #pragma once
 
-#include <iostream>
-#include <vector>
-#include <iomanip>
+#include "PortalMenu.h"
 
 using namespace std;
 
 class UserInterface
 {
+public:
 
+	int getPortalSelection();
+
+private:
+	PortalMenu m_portal;
+}
+
+
+/*
 public:
 
 	int getPortalSelection();
@@ -74,3 +81,4 @@ private:
 
 };
 
+*/

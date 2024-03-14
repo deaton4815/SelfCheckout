@@ -16,15 +16,15 @@ public:
 private:
 
 	BarcodeScanner m_scoScanner;
-	PayService m_scoPayService;
+	static PayService m_scoPayService;
 	UserInterface m_scoUserInterface;
 
 	void executeSCO();
 	
 	int getPortalSelection();
-	void executePortalSelection(int);
-	void executeCustomerSelection();
-	void executeEmployeeSelection();
+	void executePortal(int);
+	void executeCustomerPortal();
+	void executeEmployeePortal();
 
 	void executeItemSelection();
 	void executeItemRemoval();

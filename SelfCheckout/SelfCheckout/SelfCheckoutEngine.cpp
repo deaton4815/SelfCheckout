@@ -4,13 +4,13 @@ SelfCheckoutEngine::SelfCheckoutEngine() {
 	executeSCO();
 }
 
-//Drives self checkout process
+// Self checkout driver
 void SelfCheckoutEngine::executeSCO() {
 
 	int portalSelection{ 0 };
 	do {
 		portalSelection = getPortalSelection();//First selection screen.
-		executePortalSelection(portalSelection);//Executes either customer or employee portal
+		executePortal(portalSelection);//Executes either customer or employee portal
 
 		m_scoScanner.resetCart();
 
@@ -18,22 +18,25 @@ void SelfCheckoutEngine::executeSCO() {
 	} while (portalSelection != 0);
 }
 
-// 
+// Prompts user for portal selection until either customer
+// or employee portal is selected or program is terminated
 int SelfCheckoutEngine::getPortalSelection() {
-	int portalSelection{ 0 };
+	int selection{ 0 };
 	do {
-		portalSelection = m_scoUserInterface.getPortalSelection();
-	} while ((portalSelection < 0) || (portalSelection > 2));
-	return portalSelection;
+		selection = m_scoUserInterface.getPortalSelection();
+	} while ((selection < 0) || (selection > 2));
+	return selection;
 }
 
-void SelfCheckoutEngine::executePortalSelection(int selection) {
+//Executes either customer or employee interface
+// based on portal selection
+void SelfCheckoutEngine::executePortal(int selection) {
 	switch (selection) {
 	case 1:
-		executeCustomerSelection();
+		executeCustomerPortal();
 		break;
 	case 2:
-		executeEmployeeSelection();
+		executeEmployeePortal();
 		break;
 	default:
 		break;

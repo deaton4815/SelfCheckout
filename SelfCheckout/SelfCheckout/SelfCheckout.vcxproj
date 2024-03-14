@@ -133,9 +133,11 @@
     <ClInclude Include="CartInterface.h" />
     <ClInclude Include="CashInterface.h" />
     <ClInclude Include="CashRepository.h" />
+    <ClInclude Include="CashRepositoryInterface.h" />
     <ClInclude Include="ChangeRepository.h" />
     <ClInclude Include="CreditCardTerminal.h" />
     <ClInclude Include="CustomerMenu.h" />
+    <ClInclude Include="CustomerPortal.h" />
     <ClInclude Include="EmployeeMenu.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
@@ -156,9 +158,11 @@
     <ClCompile Include="CartInterface.cpp" />
     <ClCompile Include="CashInterface.cpp" />
     <ClCompile Include="CashRepository.cpp" />
+    <ClCompile Include="CashRepositoryInterface.cpp" />
     <ClCompile Include="ChangeRepository.cpp" />
     <ClCompile Include="CreditCardTerminal.cpp" />
     <ClCompile Include="CustomerMenu.cpp" />
+    <ClCompile Include="CustomerPortal.cpp" />
     <ClCompile Include="EmployeeMenu.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />

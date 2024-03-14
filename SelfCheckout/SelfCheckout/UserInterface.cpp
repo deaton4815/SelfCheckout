@@ -2,6 +2,15 @@
 
 using namespace std;
 
+int UserInterface::getPortalSelection() { return m_portal.getMenuSelection(); }
+
+
+
+
+
+
+
+/*
 int UserInterface::getPortalSelection() {
 	displayOpeningMessage();
 	displayPortalPrompts();
@@ -334,3 +343,4 @@ int UserInterface::getUserSelection() {
 void UserInterface::displayTwoDecimalFloat(float value) {
 	cout << fixed << setprecision(2) << value;
 }
+*/
