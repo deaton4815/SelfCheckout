@@ -11,5 +11,5 @@ void PaymentMenu::displayMenuOptions() const {
 	cout << "1 - Credit or debit" << endl;
 	cout << "2 - Cash payment" << endl;
 
-	cout << "\n0 - Return" << endl;
+	cout << "\n0 - Restart Checkout" << endl;
 }

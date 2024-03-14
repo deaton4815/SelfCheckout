@@ -86,7 +86,7 @@ void PaymentIO::displayTotal(const float total) const { displayValue("Total:    
 void PaymentIO::displayDue(const float due) const { displayValue("Due:      $", due); }
 void PaymentIO::displayPaid(const float paid) const { displayValue("Paid:     $", paid); }
 
-void PaymentIO::displayCode(const int code) const { m_card.displayCardConfirmation(code); }
+void PaymentIO::displayCode(const int code) const { m_card.displayAuthorizationCode(code); }
 void PaymentIO::displayChange(const float change) const { m_cash.displayChange(change); }
 
 void PaymentIO::displayValue(const string& caption, const float value) const {

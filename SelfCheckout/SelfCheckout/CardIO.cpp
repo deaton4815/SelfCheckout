@@ -2,6 +2,6 @@
 
 using namespace std;
 
-void CardIO::displayCardConfirmation(const int code) const {
+void CardIO::displayAuthorizationCode(const int code) const {
 	cout << "Confirmation Code: " << code << endl;
 }

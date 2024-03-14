@@ -4,5 +4,5 @@
 class CardIO
 {
 public:
-	void displayCardConfirmation(const int) const;
+	void displayAuthorizationCode(const int) const;
 };
