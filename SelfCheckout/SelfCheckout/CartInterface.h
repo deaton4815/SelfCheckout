@@ -15,7 +15,8 @@ public:
 	CartInterface();
 
 	void displayCart (vector<unsigned int>, vector<string>,
-		vector<string>, vector<float>, float) const;
+		vector<string>, vector<float>) const;
+	void displayLine() const;
 
 private:
 
@@ -42,6 +43,5 @@ private:
 	string getWhitespace(size_t, size_t) const;
 	size_t getDigitCount(unsigned int) const;
 
-	void displayLine() const;
 	void displayTwoDecimalFloat(float) const;
 };

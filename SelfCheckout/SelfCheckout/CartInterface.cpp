@@ -17,7 +17,7 @@ CartInterface::CartInterface()
 	
 void CartInterface::displayCart (vector<unsigned int> itemNumbers,
 	vector<string> itemIDs, vector<string> itemDescriptions,
-	vector<float> itemPrices, float subtotal) const {
+	vector<float> itemPrices) const {
 
 	displayCartHeader();
 
@@ -28,7 +28,18 @@ void CartInterface::displayCart (vector<unsigned int> itemNumbers,
 	}
 
 	displayLine();
+}
 
+void CartInterface::displayLine() const {
+
+	size_t sizeTotal
+		= m_sizeNumberHeader + m_sizeHeaderSpacer
+		+ m_sizeIDHeader + m_sizeHeaderSpacer
+		+ m_sizeDescriptionHeader + m_sizeHeaderSpacer
+		+ m_sizeCostHeader;
+
+	string line(sizeTotal, '-');
+	cout << line << endl;
 }
 
 void CartInterface::displayCartHeader() const {
@@ -84,18 +95,6 @@ size_t CartInterface::getDigitCount(unsigned int number) const {
 		++digitCount;
 	}
 	return digitCount;
-}
-
-void CartInterface::displayLine() const {
-
-	size_t sizeTotal
-		= m_sizeNumberHeader + m_sizeHeaderSpacer
-		+ m_sizeIDHeader + m_sizeHeaderSpacer
-		+ m_sizeDescriptionHeader + m_sizeHeaderSpacer
-		+ m_sizeCostHeader;
-
-	string line(sizeTotal, '-');
-	cout << line << endl;
 }
 
 void CartInterface::displayTwoDecimalFloat(float value) const {

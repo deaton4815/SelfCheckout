@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BarcodeScanner.h" />
+    <ClInclude Include="CardInterface.h" />
     <ClInclude Include="Cart.h" />
     <ClInclude Include="CartInterface.h" />
     <ClInclude Include="CashInterface.h" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BarcodeScanner.cpp" />
+    <ClCompile Include="CardInterface.cpp" />
     <ClCompile Include="Cart.cpp" />
     <ClCompile Include="CartInterface.cpp" />
     <ClCompile Include="CashInterface.cpp" />
