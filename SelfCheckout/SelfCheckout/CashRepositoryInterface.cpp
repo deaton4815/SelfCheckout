@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void CashRepositoryInterface::emptyCashPurchasesDisplay(float cash) const {
+void CashRepositoryInterface::emptyCashPurchasesDisplay(const float cash) const {
 	cout << "\nEmptying cash repository...Checkout Service Paused." << endl;
 	cout << "Cash dispensed: $";
 	displayTwoDecimalFloat(cash);
@@ -15,6 +15,6 @@ void CashRepositoryInterface::emptyCashPurchasesDisplay(float cash) const {
 	} while (startButton != 1);
 }
 
-void CashRepositoryInterface::displayTwoDecimalFloat(float value) const {
+void CashRepositoryInterface::displayTwoDecimalFloat(const float value) const {
 	cout << fixed << setprecision(2) << value;
 }

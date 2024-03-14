@@ -1,3 +1,8 @@
+/*
+* Abstract class for displaying a list of options to the user
+* and getting the selection
+*/
+
 #pragma once
 
 #include <iostream>
@@ -21,4 +26,3 @@ private:
 
 	void setSelection(int);
 };
-

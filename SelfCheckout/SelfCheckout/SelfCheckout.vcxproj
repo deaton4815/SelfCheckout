@@ -148,7 +148,7 @@
     <ClInclude Include="PortalMenu.h" />
     <ClInclude Include="SCOControlCenter.h" />
     <ClInclude Include="SelectionMenu.h" />
-    <ClInclude Include="SelfCheckoutEngine.h" />
+    <ClInclude Include="SelfCheckoutMachine.h" />
     <ClInclude Include="UserInterface.h" />
   </ItemGroup>
   <ItemGroup>
@@ -174,7 +174,7 @@
     <ClCompile Include="PortalMenu.cpp" />
     <ClCompile Include="SCOControlCenter.cpp" />
     <ClCompile Include="SelectionMenu.cpp" />
-    <ClCompile Include="SelfCheckoutEngine.cpp" />
+    <ClCompile Include="SelfCheckoutMachine.cpp" />
     <ClCompile Include="UserInterface.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

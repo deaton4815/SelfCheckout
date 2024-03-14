@@ -1,6 +1,17 @@
 #pragma once
 
+#include <iostream>
+#include <string>
+#include <vector>
+
 #include "PortalMenu.h"
+#include "CustomerMenu.h"
+#include "EmployeeMenu.h"
+#include "ItemMenu.h"
+
+#include "CartInterface.h"
+#include "PaymentInterface.h"
+#include "CashRepositoryInterface.h"
 
 using namespace std;
 
@@ -10,75 +21,36 @@ public:
 
 	int getPortalSelection();
 
-private:
-	PortalMenu m_portal;
-}
-
-
-/*
-public:
-
-	int getPortalSelection();
-
 	int getCustomerSelection();
-	int getItemSelection();
-	int getPaymentOption();
-
 	int getEmployeeSelection();
 
-	float getCash(bool);
+	int scanItem();
 
-	void displayReceiptHeader();
-	void displayReceiptFooter();
+	void displayCart(const vector<unsigned int>&, const vector<string>&,
+		const vector<string>&, const vector<float>&, const float) const;
 
-	void displayCart(vector<unsigned int>, vector<string>,
-		vector<string>, vector<float>, float);
+	int getPaymentType(const float, const float, const float);
+	void printReceipt(const vector<unsigned int>&, const vector<string>&,
+		const vector<string>&, const vector<float>&,
+		const float, const float, const float,
+		const float, const float, const int) const;
+	void printReceipt(const vector<unsigned int>&, const vector<string>&,
+		const vector<string>&, const vector<float>&,
+		const float, const float, const float,
+		const float, const float, const float) const;
 
-	void displayFullPrice(float, float, float);
-
-	void displayCardPayment(int, float, float);
-	void displayCashPayment(float, float, float);
-
-	void emptyCashPurchasesDisplay(float);
+	float getCash() const;
+	float getCash(float) const;
+	void emptyCashPurchases(const float) const;
 
 private:
 
-	void displayOpeningMessage();
-	void displayPortalPrompts();
+	PortalMenu m_portal;
+	CustomerMenu m_customerPortal;
+	EmployeeMenu m_employeePortal;
+	ItemMenu m_availableItems;
 
-	void displayCustomerPrompt();
-
-	void displayEmployeePrompt();
-	
-	void displayAvailableItems();
-
-	void displayItem(unsigned int, string, string, float);
-
-	void displayCartHeader();
-	void displayItemNumber(unsigned int);
-	void displayProductID(string);
-	void displayProductDescription(string);
-	void displayUnitCost(float);
-
-	void displaySubtotal(float);
-	void displayTax(float);
-	void displayTotal(float);
-
-	void displayPaymentOptions();
-
-	void displayCardConfirmation(int);
-
-	void displayCashPaymentPrompt(bool);
-
-	void displayAmountPaid(float);
-	void displayAmountDue(float);
-	void displayChange(float);
-
-	void displayLine();
-
-	int getUserSelection();
-	void displayTwoDecimalFloat(float);
-
+	CartInterface m_cart;
+	PaymentInterface m_payment;
+	CashRepositoryInterface m_cashPurchases;
 };
-
-*/

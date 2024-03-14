@@ -72,7 +72,7 @@
     <ClInclude Include="SelectionMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SelfCheckoutEngine.h">
+    <ClInclude Include="SelfCheckoutMachine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UserInterface.h">
@@ -146,7 +146,7 @@
     <ClCompile Include="SelectionMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SelfCheckoutEngine.cpp">
+    <ClCompile Include="SelfCheckoutMachine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UserInterface.cpp">

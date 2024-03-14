@@ -4,5 +4,5 @@
 class CardInterface
 {
 public:
-	void displayCardConfirmation(int) const;
+	void displayCardConfirmation(const int) const;
 };

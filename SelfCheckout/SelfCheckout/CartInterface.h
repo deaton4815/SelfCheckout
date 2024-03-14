@@ -1,3 +1,6 @@
+/*
+* Class displays the cart contents to the user
+*/
 #pragma once
 
 #include <iostream>
@@ -12,25 +15,24 @@ class CartInterface
 
 public:
 
-	CartInterface();
+	void displayCart (const vector<unsigned int>&, const vector<string>&,
+		const vector<string>&, const vector<float>&) const;
 
-	void displayCart (vector<unsigned int>, vector<string>,
-		vector<string>, vector<float>) const;
 	void displayLine() const;
 
 private:
 
-	string m_numberHeader;
-	string m_idHeader;
-	string m_descriptionHeader;
-	string m_costHeader;
-	string m_headerSpacer;
+	const string m_numberHeader{ "Item #" };
+	const string m_idHeader{ "Product ID" };
+	const string m_descriptionHeader{ "Product Description" };
+	const string m_costHeader{ "Unit Cost" };
+	const string m_headerSpacer{ "  " };
 
-	size_t m_sizeNumberHeader;
-	size_t m_sizeIDHeader;
-	size_t m_sizeDescriptionHeader;
-	size_t m_sizeCostHeader;
-	size_t m_sizeHeaderSpacer;
+	const size_t m_sizeNumberColumn{ 6 };
+	const size_t m_sizeIDColumn{ 13 };
+	const size_t m_sizeDescriptionColumn{ 35 };
+	const size_t m_sizeCostColumn{ 10 };
+	const size_t m_sizeColumnSpacer{ 2 };
 
 	void displayCartHeader () const;
 	void displayItem (unsigned int, string,
@@ -40,8 +42,8 @@ private:
 	void displayColumn(string, size_t) const;
 	void displayColumn(float) const;
 
-	string getWhitespace(size_t, size_t) const;
+	string getWhitespace(const size_t, const size_t) const;
 	size_t getDigitCount(unsigned int) const;
 
-	void displayTwoDecimalFloat(float) const;
+	void displayTwoDecimalFloat(const float) const;
 };

@@ -1,23 +1,11 @@
 #include "CartInterface.h"
 
 using namespace std;
-
-CartInterface::CartInterface()
-	: m_numberHeader{ "Item #" }
-	, m_idHeader{ "Product ID" }
-	, m_descriptionHeader{ "Product Description" }
-	, m_costHeader{ "Unit Cost" }
-	, m_headerSpacer{ "  " }
-	, m_sizeNumberHeader{ m_numberHeader.size()}
-	, m_sizeIDHeader{ m_idHeader.size() }
-	, m_sizeDescriptionHeader{ m_descriptionHeader.size() }
-	, m_sizeCostHeader{ m_costHeader.size() }
-	, m_sizeHeaderSpacer{ m_headerSpacer.size() }
-{}
 	
-void CartInterface::displayCart (vector<unsigned int> itemNumbers,
-	vector<string> itemIDs, vector<string> itemDescriptions,
-	vector<float> itemPrices) const {
+// Displays cart contents
+void CartInterface::displayCart (const vector<unsigned int>& itemNumbers,
+	const vector<string>& itemIDs, const vector<string>& itemDescriptions,
+	const vector<float>& itemPrices) const {
 
 	displayCartHeader();
 
@@ -30,39 +18,44 @@ void CartInterface::displayCart (vector<unsigned int> itemNumbers,
 	displayLine();
 }
 
+// Displays a line that is the same width as the cart display
 void CartInterface::displayLine() const {
 
 	size_t sizeTotal
-		= m_sizeNumberHeader + m_sizeHeaderSpacer
-		+ m_sizeIDHeader + m_sizeHeaderSpacer
-		+ m_sizeDescriptionHeader + m_sizeHeaderSpacer
-		+ m_sizeCostHeader;
+		= m_sizeNumberColumn + m_sizeColumnSpacer
+		+ m_sizeIDColumn + m_sizeColumnSpacer
+		+ m_sizeDescriptionColumn + m_sizeColumnSpacer
+		+ m_sizeCostColumn;
 
 	string line(sizeTotal, '-');
 	cout << line << endl;
 }
 
+// Displays cart property headers
 void CartInterface::displayCartHeader() const {
 	cout << "\n";
-	cout << m_numberHeader << m_headerSpacer;
-	cout << m_idHeader << m_headerSpacer;
-	cout << m_descriptionHeader << m_headerSpacer;
+	displayColumn(m_numberHeader, m_sizeNumberColumn);
+	displayColumn(m_idHeader, m_sizeIDColumn);
+	displayColumn(m_descriptionHeader, m_sizeDescriptionColumn);
 	cout << m_costHeader << endl;
 
 	displayLine();
-} 
+}
 
-void CartInterface::displayItem(unsigned int number, string id,
-	string description, float price) const {
+// Displays the properties of a single item
+void CartInterface::displayItem(unsigned int number,
+	string id, string description, float price) const {
 
-	displayColumn(number, m_sizeNumberHeader);
-	displayColumn(id, m_sizeIDHeader);
-	displayColumn(description, m_sizeDescriptionHeader); 
+	//size_t size{ m_sizeNumberHeader };
+	displayColumn(number, m_sizeNumberColumn);
+	displayColumn(id, m_sizeIDColumn);
+	displayColumn(description, m_sizeDescriptionColumn);
 	displayColumn(price);
 
 }
 
-void CartInterface::displayColumn(unsigned int column, size_t sizeHeader) const {
+// Displays item number
+void CartInterface::displayColumn(const unsigned int column, size_t sizeHeader) const {
 
 	size_t sizeColumn{ getDigitCount(column) };
 	string spacer{ getWhitespace(sizeHeader, sizeColumn) };
@@ -70,24 +63,28 @@ void CartInterface::displayColumn(unsigned int column, size_t sizeHeader) const 
 	cout << column << spacer;
 }
 
+// Displays item ID and description
 void CartInterface::displayColumn(string column, size_t sizeHeader) const {
 
 	string spacer{ getWhitespace(sizeHeader, column.size()) };
 	cout << column << spacer;
 }
 
+// Displays unit price
 void CartInterface::displayColumn(float column) const {
 	cout << "$";
 	displayTwoDecimalFloat(column);
 	cout << endl;
 }
 
-string CartInterface::getWhitespace(size_t sizeHeader, size_t sizeEntry) const {
-	size_t sizeWhitespace{ sizeHeader + m_sizeHeaderSpacer - sizeEntry };
+// Calculates whitespace needed to line up menu display
+string CartInterface::getWhitespace(const size_t sizeHeader, const size_t sizeEntry) const {
+	size_t sizeWhitespace{ sizeHeader + m_sizeColumnSpacer - sizeEntry };
 	string whitespace(sizeWhitespace, ' ');
 	return whitespace;
 }
 
+// Gets digits in item number to line up menu display
 size_t CartInterface::getDigitCount(unsigned int number) const {
 	size_t digitCount{ 0 };
 	while (number != 0) {
@@ -97,6 +94,6 @@ size_t CartInterface::getDigitCount(unsigned int number) const {
 	return digitCount;
 }
 
-void CartInterface::displayTwoDecimalFloat(float value) const {
+void CartInterface::displayTwoDecimalFloat(const float value) const {
 	cout << fixed << setprecision(2) << value;
 }

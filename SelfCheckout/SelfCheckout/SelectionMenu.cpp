@@ -21,6 +21,7 @@ void SelectionMenu::displayInputPrompt() const {
 int SelectionMenu::getUserInput() {
 	int selection{ 0 };
 	cin >> selection;
+	return selection;
 }
 
 void SelectionMenu::setSelection(int input) { m_selection = input; }

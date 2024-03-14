@@ -1,13 +1,14 @@
 #pragma once
 
 #include <iostream>
+#include <iomanip>
 
 class CashRepositoryInterface
 {
 public:
-	void emptyCashPurchasesDisplay(float) const;
+	void emptyCashPurchasesDisplay(const float) const;
 
 private:
-	void displayTwoDecimalFloat(float) const;
+	void displayTwoDecimalFloat(const float) const;
 };
 
